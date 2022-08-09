@@ -1,0 +1,20 @@
+.singlebar{
+    margin-top:.5rem;
+}
+.icon{
+    font-size: 1.7rem;
+    color: black;
+}
+.outletList{
+    background-color: rgb(111, 112, 112);
+    
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: .5%;
+    
+}
+.outlet{
+    max-width: 93% !important;
+    margin-left: auto;
+    margin-right: .5%;
+}

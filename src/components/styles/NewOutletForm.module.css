@@ -1,0 +1,27 @@
+.modal_lg {
+    max-width: 75% !important;
+}
+
+.next {
+    margin-top: 2rem;
+}
+.panel {
+    border-radius: 25px;
+    background-color: white;
+    max-width: 99%;
+    margin: auto;
+}
+.previewVideo{
+    width: 500px;
+    height: auto;
+    
+}
+.previewImage{
+    height: 250px;
+    width: 250px;
+    margin-left: 10px;
+}
+.footer{
+    text-align: center;
+    
+}

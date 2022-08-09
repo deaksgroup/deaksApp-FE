@@ -1,0 +1,9 @@
+.panel {
+    border-radius: 25px;
+    background-color: white;
+    max-width: 99%;
+    margin: auto;
+}
+.headingbar{
+    background-color: beige;
+}

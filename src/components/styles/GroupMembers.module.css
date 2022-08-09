@@ -1,0 +1,12 @@
+.panel {
+    border-radius: 25px;
+    background-color: white;
+    max-width: 99%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.total {
+    color: red;
+    margin-left: .5rem;
+}

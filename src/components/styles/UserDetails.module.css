@@ -1,0 +1,11 @@
+.panel {
+    border-radius: 25px;
+    background-color: white;
+    max-width: 99%;
+    margin: auto;
+    margin-top: 50px;
+}
+span.isVerified::after{
+content: "Verified";
+color:green
+}

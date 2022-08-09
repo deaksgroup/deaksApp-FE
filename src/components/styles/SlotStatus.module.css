@@ -1,0 +1,97 @@
+.modal_lg {
+    max-width: 75% !important;
+}
+
+.next {
+    margin-top: 2rem;
+}
+.submissionPanel {
+    border-radius: 25px;
+    background-color: white;
+    max-width:100%;
+    margin:1%;
+}
+
+.formStyle {
+    padding-left: 2rem;
+}
+
+input[type="date" i].SSDate {
+    margin-left: 1rem;
+    text-align: center;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+/* input[type="time" i]{
+    margin-left: 1rem;
+    text-align: center;
+} */
+input[type="number" i].pay {
+    margin-left: 1rem;
+    text-align: center;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+
+input[type="time" i].SSTime {
+    margin-left: 1rem;
+    text-align: center;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.footer {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 1.5rem;
+}
+.addSingleUser{
+    border-radius: 25px;
+        background-color: white;
+        max-width: 100%;
+        margin: 1%;
+}
+input[type="search" i ].SSSearch{
+    margin-left: 1rem;
+    width: 75%;
+        text-align: center;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+}
