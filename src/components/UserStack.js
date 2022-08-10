@@ -11,7 +11,7 @@ const UserStack = (props) => {
     const fetchUsers = async () => {
       try {
         const response = await fetch(
-          "https://deaksserver-version-1.herokuapp.com/users",
+          "https://deaksappbe.herokuapp.com/users",
           {
             method: "GET",
             headers: {

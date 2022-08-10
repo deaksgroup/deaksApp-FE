@@ -15,7 +15,7 @@ const EditGroupForm = (props) => {
     const getData = async () => {
       try {
         const response = await fetch(
-          "https://deaksserver-version-1.herokuapp.com/users",
+          "https://deaksappbe.herokuapp.com/users",
           {
             method: "GET",
             headers: {
@@ -95,7 +95,7 @@ const EditGroupForm = (props) => {
     });
 
     axios
-      .patch(`https://deaksserver-version-1.herokuapp.com/groupList`, {
+      .patch(`https://deaksappbe.herokuapp.com/groupList`, {
         outletId: props.group.outletId,
         groupId: props.group._id,
         title: title,

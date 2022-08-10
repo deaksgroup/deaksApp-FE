@@ -78,11 +78,11 @@ const NewHotelFrom = (props) => {
     //     secret_token: localStorage.getItem("JWtToken"),
     //   },
 
-    //   url: "https://deaksserver-version-1.herokuapp.com/hotelList",
+    //   url: "https://deaksappbe.herokuapp.com/hotelList",
     // }).then((res) => { //console.log(res);
     // });
     const response = await fetch(
-      "https://deaksserver-version-1.herokuapp.com/hotelList",
+      "https://deaksappbe.herokuapp.com/hotelList",
       {
         method: "POST",
         body: formData,

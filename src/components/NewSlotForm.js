@@ -32,7 +32,7 @@ const NewSlotForm = () => {
   let value = 5;
   //console.log(startTime);
   useEffect(() => {
-    axios(`https://deaksserver-version-1.herokuapp.com/groupList/all`).then(
+    axios(`https://deaksappbe.herokuapp.com/groupList/all`).then(
       (resp) => {
         setGroups(resp.data);
 
@@ -41,7 +41,7 @@ const NewSlotForm = () => {
     );
   }, []);
   useEffect(() => {
-    axios(`https://deaksserver-version-1.herokuapp.com/users`).then((resp) => {
+    axios(`https://deaksappbe.herokuapp.com/users`).then((resp) => {
       setUsers(resp.data);
 
       //console.log("resp", resp.data);
@@ -52,7 +52,7 @@ const NewSlotForm = () => {
     const getData = async () => {
       try {
         const response = await fetch(
-          "https://deaksserver-version-1.herokuapp.com/hotelList",
+          "https://deaksappbe.herokuapp.com/hotelList",
           {
             method: "GET",
             headers: {
@@ -112,7 +112,7 @@ const NewSlotForm = () => {
     const getData = async () => {
       try {
         const response = await fetch(
-          `https://deaksserver-version-1.herokuapp.com/adminoutletList/${hotel}`,
+          `https://deaksappbe.herokuapp.com/adminoutletList/${hotel}`,
           {
             method: "GET",
             headers: {
@@ -189,12 +189,12 @@ const NewSlotForm = () => {
     //     // 'Content-Type': 'multipart/form-data',
     //     secret_token: localStorage.getItem("JWtToken"),
     //   },
-    //   url: "https://deaksserver-version-1.herokuapp.com/slotList",
+    //   url: "https://deaksappbe.herokuapp.com/slotList",
     // }).then((res) => {
     //   //console.log(res, "token2");
     // });
     axios
-      .post(`https://deaksserver-version-1.herokuapp.com/slotList`, slot)
+      .post(`https://deaksappbe.herokuapp.com/slotList`, slot)
       .then((resp) => {
         //console.lyog("resp", resp);
       })

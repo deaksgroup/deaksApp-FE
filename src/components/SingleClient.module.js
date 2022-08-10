@@ -20,7 +20,7 @@ const SingleClient = (props) => {
     const getData = async () => {
       try {
         const response = await fetch(
-          `https://deaksserver-version-1.herokuapp.com/adminoutletList/${props.hotel._id}`,
+          `https://deaksappbe.herokuapp.com/adminoutletList/${props.hotel._id}`,
           {
             method: "GET",
             headers: {
@@ -46,7 +46,7 @@ const SingleClient = (props) => {
   };
   const deleteHotel = async (e) => {
     const response = await fetch(
-      `https://deaksserver-version-1.herokuapp.com/hotelList/${e.target.value}`,
+      `https://deaksappbe.herokuapp.com/hotelList/${e.target.value}`,
       {
         method: "DELETE",
 
@@ -72,7 +72,7 @@ const SingleClient = (props) => {
   };
   const deleteOutlet = async (e) => {
     const response = await fetch(
-      `https://deaksserver-version-1.herokuapp.com/outletList/${e.target.value}`,
+      `https://deaksappbe.herokuapp.com/outletList/${e.target.value}`,
       {
         method: "DELETE",
 
