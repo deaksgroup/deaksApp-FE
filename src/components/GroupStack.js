@@ -10,7 +10,7 @@ const GroupStack = (props) => {
   const deleteGroup = (e) => {
     axios
       .delete(
-        `https://deaksserver-version-1.herokuapp.com/groupList/${e.target.value}`
+        `https://deaksappbe.herokuapp.com/groupList/${e.target.value}`
       )
       .then((resp) => {
         //console.log("resp", resp);

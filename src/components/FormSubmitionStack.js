@@ -12,7 +12,7 @@ const FormSubmitionStack = (props) => {
 
   useEffect(() => {
     const fetchUsers = () => {
-      axios(`https://deaksserver-version-1.herokuapp.com/users`)
+      axios(`https://deaksappbe.herokuapp.com/users`)
         .then((resp) => {
           //console.log("resp", resp.data);
           // setUsers(resp.data);
@@ -37,7 +37,7 @@ const FormSubmitionStack = (props) => {
   )}`;
   useEffect(() => {
     const fetch = () => {
-      axios(`https://deaksserver-version-1.herokuapp.com/submit`)
+      axios(`https://deaksappbe.herokuapp.com/submit`)
         .then((resp) => {
           //console.log("resp", resp.data);
           // setSubmissions(resp.data);

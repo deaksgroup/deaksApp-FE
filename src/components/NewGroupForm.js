@@ -15,7 +15,7 @@ const NewGroupForm = (props) => {
     const getData = async () => {
       try {
         const response = await fetch(
-          "https://deaksserver-version-1.herokuapp.com/users",
+          "https://deaksappbe.herokuapp.com/users",
           {
             method: "GET",
             headers: {
@@ -80,7 +80,7 @@ const NewGroupForm = (props) => {
     });
 
     axios
-      .post(`https://deaksserver-version-1.herokuapp.com/groupList`, {
+      .post(`https://deaksappbe.herokuapp.com/groupList`, {
         outletId: props.outlet.outlet._id,
         title: title,
         users: selected,

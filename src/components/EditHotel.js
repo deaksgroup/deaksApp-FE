@@ -46,7 +46,7 @@ const EditHotel = (props) => {
     const preview = document.getElementById(`previewImages${props.hotel._id}`);
     var image = new Image();
     image.src = String(
-      `https://deaksserver-version-1.herokuapp.com/images/${props.hotel.hotelEmblem}`
+      `https://deaksappbe.herokuapp.com/images/${props.hotel.hotelEmblem}`
     );
     image.classList.add(`${style.previewImage}`);
     preview.appendChild(image);
@@ -78,11 +78,11 @@ const EditHotel = (props) => {
     //     secret_token: localStorage.getItem("JWtToken"),
     //   },
 
-    //   url: "https://deaksserver-version-1.herokuapp.com/hotelList",
+    //   url: "https://deaksappbe.herokuapp.com/hotelList",
     // }).then((res) => { //console.log(res);
     // });
     const response = await fetch(
-      "https://deaksserver-version-1.herokuapp.com/hotelList",
+      "https://deaksappbe.herokuapp.com/hotelList",
       {
         method: "PATCH",
         body: formData,

@@ -15,7 +15,7 @@ const Client = (props) => {
     const getData = async () => {
       try {
         const response = await fetch(
-          "https://deaksserver-version-1.herokuapp.com/users",
+          "https://deaksappbe.herokuapp.com/users",
           {
             method: "GET",
             headers: {

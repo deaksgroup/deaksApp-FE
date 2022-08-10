@@ -11,7 +11,7 @@ const SlotStack = () => {
     const getData = async () => {
       try {
         const response = await fetch(
-          "https://deaksserver-version-1.herokuapp.com/slotList",
+          "https://deaksappbe.herokuapp.com/slotList",
           {
             method: "GET",
             headers: {
@@ -39,7 +39,7 @@ const SlotStack = () => {
   };
   const deleteSlot = async (e) => {
     const response = await fetch(
-      `https://deaksserver-version-1.herokuapp.com/slotList/${e.target.value}`,
+      `https://deaksappbe.herokuapp.com/slotList/${e.target.value}`,
       {
         method: "DELETE",
 
