@@ -6,6 +6,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import LoginForm from "./login";
 import TermsConditions from "./components/leagal/TermsConditions";
 import PrivacyPolicy from "./components/leagal/PrivacyPolicy";
+import SupportChannel from "./components/leagal/SupportChannel";
 
 function App() {
   const view = useContext(ViewContext);
@@ -19,6 +20,7 @@ function App() {
           <Route path={"/home"} element={<Home />}></Route>
           <Route path={"/privacy-policy"} element={<PrivacyPolicy />}></Route>
           <Route path={"/terms-condition"} element={<TermsConditions />}></Route>
+          <Route path={"/support-channel"} element={<SupportChannel />}></Route>
         </Routes>
       </ViewContextProvider>
     </div>
