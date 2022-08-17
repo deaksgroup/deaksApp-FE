@@ -64,10 +64,10 @@ const SupportChanel = () => {
             </h5>
             <span>
               To report vulnerabilities related to Deaks app , follow our
-              reporting guidelines. For all other security issues, visit our
-              help portal{" "}
-              <a target="_blank" href="link">
-                Link
+              reporting guidelines. For all other security issues,<br></br>{" "}
+              Write to us @{" "}
+              <a target="_blank" href="mailto:deaks@deaksgroup.com">
+                deaks@deaksgroup.com
               </a>
             </span>
 
@@ -76,9 +76,13 @@ const SupportChanel = () => {
               <strong>{">"}Security issues and all other matters </strong>
             </h5>
             <span>
-              As Deaks is part of the Salesforce family, the Deaks office is
-              located in the 132A casuarina Road , View our location on <a target="_blank" href="link">
-              Google Maps 
+              As Deaks is part of Deaks Group Private Ltd, the Deaks office is
+              located in the 132A casuarina Road,<br></br>Write to us :
+              deaks@deaksgroup.com or call us on +65 91828031<br></br> Address :
+              132A casuarina road, Sembawang hills estate, 579520<br></br> View
+              our location on{" "}
+              <a target="_blank" href="https://goo.gl/maps/KuXQvR5qLGhNe3GJA">
+                Google Maps
               </a>
             </span>
           </div>
