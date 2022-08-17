@@ -73,7 +73,7 @@ const SupportChanel = () => {
 
             <h2 className="salesTeamHeader">Deaks Group office</h2>
             <h5>
-              <strong>{">"}Security issues and all other matters </strong>
+              <strong>{">"}Our Team</strong>
             </h5>
             <span>
               As Deaks is part of Deaks Group Private Ltd, the Deaks office is
