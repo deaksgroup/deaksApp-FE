@@ -19,6 +19,7 @@ const NewSlotForm = () => {
   const [endTime, setEndTIme] = useState("");
   const [reqVacancies, setReqVacancies] = useState("");
   const [releasingVacancies, setReleasingVacancies] = useState("");
+  const [priority, setPriority] = useState("");
   const [payPerHour, setPayPerHour] = useState("");
   const [totalPay, setTotalPay] = useState("");
   const [date, setDate] = useState("");
@@ -32,13 +33,11 @@ const NewSlotForm = () => {
   let value = 5;
   //console.log(startTime);
   useEffect(() => {
-    axios(`https://deaksappbe.herokuapp.com/groupList/all`).then(
-      (resp) => {
-        setGroups(resp.data);
+    axios(`https://deaksappbe.herokuapp.com/groupList/all`).then((resp) => {
+      setGroups(resp.data);
 
-        //console.log("resp", resp.data);
-      }
-    );
+      //console.log("resp", resp.data);
+    });
   }, []);
   useEffect(() => {
     axios(`https://deaksappbe.herokuapp.com/users`).then((resp) => {
@@ -48,6 +47,7 @@ const NewSlotForm = () => {
     });
   }, []);
   //console.log(hotel, "hotel");
+  console.log(groups, "....groups");
   useEffect(() => {
     const getData = async () => {
       try {
@@ -76,6 +76,9 @@ const NewSlotForm = () => {
   useEffect(() => {});
   const hotelChangeHandler = (e) => {
     setHotel(e.target.value);
+  };
+  const priorityChangeHandler = (e) => {
+    setPriority(e.target.value);
   };
   const outletChangeHandler = (e) => {
     setOutlet(
@@ -162,9 +165,22 @@ const NewSlotForm = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
+    let groups = [];
+    selectedGroups.map((group) => {
+      groups.push(group._id);
+    });
+    let sUsers = [];
+    selectedUsers.map((user) => {
+      sUsers.push(user._id);
+    });
+
     let hotelName;
 
     hotelName = loadedClients.filter((Hotel) => Hotel._id == hotel);
+    console.log(groups, "..groupsId");
+    console.log(sUsers, "....sUsers");
+    // console.log(priority);
+
     view.handleAppView("slots");
     view.handleContent("");
     //console.log("");
@@ -175,11 +191,14 @@ const NewSlotForm = () => {
       hotelName: hotelName[0].hotelName,
       outlet: outlet._id,
       startTime: startTime,
+      showGroups: groups,
+      selectedUsers: sUsers,
       endTime: endTime,
       reqVac: reqVacancies,
       relVac: releasingVacancies,
       payperhour: payPerHour,
       totalpay: totalPay,
+      priority: priority,
     };
     // Axios({
     //   method: "POST",
@@ -251,7 +270,16 @@ const NewSlotForm = () => {
                 ></input>
               </div>
               <div className="form-group col">
-                <label htmlFor="exampleFormControlTextarea1">Time</label>
+                <label htmlFor="exampleFormControlTextarea1">Priority</label>
+                <select
+                  className="form-control"
+                  required
+                  onChange={priorityChangeHandler}
+                >
+                  <option selected></option>
+                  <option value="H">High</option>
+                  <option value="L">Low</option>
+                </select>
               </div>
             </div>{" "}
             <div className="form-row mt-1">
@@ -375,7 +403,7 @@ const NewSlotForm = () => {
                   onSelect={handleSelectUser} // Function will trigger on select event
                   onRemove={handleRemoveUser} // Function will trigger on remove event
                   selectionLimit={4}
-                  displayValue="fullName" // Property name to display in the dropdown options
+                  displayValue="name" // Property name to display in the dropdown options
                 />
               </div>
             </div>

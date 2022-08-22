@@ -30,7 +30,7 @@ const NewOutletForm = () => {
     setTitile(e.target.value);
   };
   const hotelChangeHandler = (e) => {
-    setHotel(e.target.value);
+    setHotel(loadedClients.filter((hotel) => hotel._id == e.target.value));
   };
   const contactChangeHandler = (e) => {
     setContact(e.target.value);
@@ -175,7 +175,8 @@ const NewOutletForm = () => {
 
     const outlet = {
       title: title,
-      hotel: hotel,
+      hotel: hotel[0]._id,
+      hotelName: hotel[0].hotelName,
       address: address,
       contact: contact,
       jobRemarks: jobRemarks,
@@ -336,7 +337,6 @@ const NewOutletForm = () => {
                     </div>
                     <div className="col">
                       <input
-                        type="Number"
                         className="form-control "
                         placeholder="Youtube Link "
                         onChange={youtubeLinkChangeHandler}

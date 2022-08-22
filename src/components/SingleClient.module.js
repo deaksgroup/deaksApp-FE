@@ -72,7 +72,7 @@ const SingleClient = (props) => {
   };
   const deleteOutlet = async (e) => {
     const response = await fetch(
-      `https://deaksappbe.herokuapp.com/outletList/${e.target.value}`,
+      `https://deaksappbe.herokuapp.com/adminoutletList/${e.target.value}`,
       {
         method: "DELETE",
 

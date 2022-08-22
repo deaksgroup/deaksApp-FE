@@ -7,7 +7,30 @@ import SlotStack from "./SlotStack";
 import ViewContext from "../appView-context";
 const Slots = () => {
   const view = useContext(ViewContext);
-
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await fetch("https://deaksappbe.herokuapp.com/users", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            secret_token: localStorage.getItem("JWtToken"),
+          },
+        });
+        if (!response.ok) {
+          throw new Error("Something went wrong!");
+        }
+        const data = await response.json();
+        //console.log(data, "......");
+        setUsers(data);
+      } catch (error) {
+        //console.log(error.message);
+      }
+    };
+    getData();
+  }, []);
+  console.log(users, ".uses");
   const createNewSlot = () => {
     view.handleAppView("new-slot-form");
   };
@@ -29,7 +52,7 @@ const Slots = () => {
                     style={{
                       borderRadius: "20px",
                       height: "50px",
-                      padding: "0px 20px"
+                      padding: "0px 20px",
                     }}
                   >
                     + New Slot
@@ -53,7 +76,7 @@ const Slots = () => {
               </div>
             </div>
             <hr></hr>
-            <SlotStack></SlotStack>
+            <SlotStack users={users}></SlotStack>
           </div>
           {/* <header>
           <div

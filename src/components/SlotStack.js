@@ -3,7 +3,7 @@ import SlotStatus from "./SlotStatus.module";
 import styles from "./styles/SlotStack.module.css";
 import ViewContext from "../appView-context";
 
-const SlotStack = () => {
+const SlotStack = (props) => {
   const view = useContext(ViewContext);
   const [loadedSlots, setLoadedSlots] = useState([]);
 
@@ -59,7 +59,8 @@ const SlotStack = () => {
             <tr>
               <th scope="col">#</th>
               <th scope="col">Hotel</th>
-              <th scope="col">Submissions</th>
+              <th scope="col">Confirmed</th>
+              <th scope="col">WaitingList</th>
               <th scope="col">status</th>
               <th scope="col">Action</th>
             </tr>
@@ -71,7 +72,8 @@ const SlotStack = () => {
                   <th scope="row">{i + 1}</th>
                   <td>{slot.hotelName}</td>
                   <td>{slot.ConfirmedRequests.length}</td>
-                  <td>Active</td>
+                  <td>{slot.WaitingRequests.length}</td>
+                  <td>{slot.status}</td>
                   <td className="d-flex justify-content-start align-items-center">
                     {/* <button
                 className="btn btn-danger btn-sm mx-2"
@@ -87,7 +89,9 @@ const SlotStack = () => {
                       Delete
                     </button>
 
-                    <SlotStatus slots={{ Slot: slot }}></SlotStatus>
+                    <SlotStatus
+                      slots={{ Slot: slot, Users: props.users }}
+                    ></SlotStatus>
                   </td>
                 </tr>
               );

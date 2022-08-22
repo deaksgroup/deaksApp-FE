@@ -7,19 +7,17 @@ const UserStack = (props) => {
   const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState();
   let user = 67;
+  let i = 0;
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch(
-          "https://deaksappbe.herokuapp.com/users",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              secret_token: localStorage.getItem("JWtToken"),
-            },
-          }
-        );
+        const response = await fetch("https://deaksappbe.herokuapp.com/users", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            secret_token: localStorage.getItem("JWtToken"),
+          },
+        });
         if (!response.ok) {
           throw new Error("Something went wrong!");
         }
@@ -61,10 +59,11 @@ const UserStack = (props) => {
         </thead>
         <tbody>
           {users.map((user) => {
+            i++;
             return (
               <tr key={user._id}>
-                <th scope="row">1055</th>
-                <td>{user.fullName}</td>
+                <th scope="row">{i}</th>
+                <td>{user.name}</td>
                 <td>{user.accountStatus}</td>
                 <td>Active</td>
                 <td>

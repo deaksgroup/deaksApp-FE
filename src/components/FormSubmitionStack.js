@@ -4,6 +4,9 @@ import axios from "axios";
 // import styles from "./styles/FormSubmitionStack.module.css";
 
 const FormSubmitionStack = (props) => {
+  axios.defaults.headers.common["secret_token"] = `${localStorage.getItem(
+    "JWtToken"
+  )}`;
   const view = useContext(ViewContext);
   const [submissions, setSubmissions] = useState([]);
 
@@ -14,7 +17,7 @@ const FormSubmitionStack = (props) => {
     const fetchUsers = () => {
       axios(`https://deaksappbe.herokuapp.com/users`)
         .then((resp) => {
-          //console.log("resp", resp.data);
+          // console.log("resp", resp.data);
           // setUsers(resp.data);
         })
         .then(() => {
@@ -27,14 +30,14 @@ const FormSubmitionStack = (props) => {
   const verifyUser = (e) => {
     const selectForm = submissions.filter((form) => form._id == e.target.value);
     const selectUser = users.filter((user) => user._id == selectForm[0].userId);
+    console.log(selectForm, "...form");
+    console.log(users);
 
     props.verifyUser({ form: selectForm[0], user: selectUser[0] });
     //console.log(selectForm[0], selectUser[0]);
     view.handleAppView("verify-user-details");
   };
-  axios.defaults.headers.common["secret_token"] = `${localStorage.getItem(
-    "JWtToken"
-  )}`;
+
   useEffect(() => {
     const fetch = () => {
       axios(`https://deaksappbe.herokuapp.com/submit`)

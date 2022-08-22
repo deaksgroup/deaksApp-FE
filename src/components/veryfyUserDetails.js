@@ -6,23 +6,24 @@ import ViewContext from "../appView-context";
 const VeryfyUserDetails = (props) => {
   let submit = props.form.form;
   let user = props.form.user;
-  //console.log(props.form);
+  console.log(user, "user");
+  console.log(props.form);
   axios.defaults.headers.common["secret_token"] = `${localStorage.getItem(
     "JWtToken"
   )}`;
   let actions;
   const view = useContext(ViewContext);
   const [edit, isEdit] = useState(true);
-  const [fullName, setFullName] = useState(user.fullName);
+  const [fullName, setFullName] = useState(user.name);
   const [deaksId, setDeaksId] = useState();
   const [bookingName, setbookingName] = useState(submit.bookingName);
-  const [contact, setContact] = useState(user.contact);
+  const [contact, setContact] = useState(user.contactNumber);
   const [email, setEmail] = useState(user.email);
   const [street, setStreet] = useState(submit.street);
   const [zipCode, setZipCode] = useState(submit.zipCode);
   const [city, setCity] = useState(submit.city);
   const [unitNumber, setUnitNumber] = useState(submit.unitNumber);
-  const [sex, setSex] = useState(submit.sex);
+  const [sex, setSex] = useState(submit.Sex);
   const [Dob, setDob] = useState(submit.DOB);
   const [residentStatus, setResidentStatus] = useState(submit.residentStatus);
   const [FSInstitute, setFSInstitute] = useState(submit.FSInstitute);
@@ -35,7 +36,7 @@ const VeryfyUserDetails = (props) => {
     user.verificationStatus
   );
   const [emeregencyContactNumber, setEmergencyContactNumber] = useState(
-    submit.emergencyContactNumber
+    submit.emergencyContact
   );
   const [emeregencyContactName, setEmergencyContactName] = useState(
     submit.emergencyContactName

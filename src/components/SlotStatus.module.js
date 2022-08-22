@@ -2,51 +2,32 @@ import React, { useEffect, useState } from "react";
 import styles from "./styles/SlotStatus.module.css";
 
 const SlotStatus = (props) => {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState(props.slots.Users);
   const [confirmedUsers, setConfirmedUsers] = useState([]);
   const [waitingList, setWaitingList] = useState([]);
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await fetch(
-          "https://deaksappbe.herokuapp.com/users",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              secret_token: localStorage.getItem("JWtToken"),
-            },
-          }
-        );
-        if (!response.ok) {
-          throw new Error("Something went wrong!");
-        }
-        const data = await response.json();
-        //console.log(data, "......");
-        setUsers(data);
-      } catch (error) {
-        //console.log(error.message);
-      }
-    };
-    getData();
-  }, []);
-  //console.log(props.slots, "...slot");
   let ConfirmedUsers = [];
   let WaitingListUsers = [];
+
   useEffect(() => {
     if (props.slots.Slot.ConfirmedRequests != null) {
+      // console.log("CONFIRMED REQUESTS");
+
       users.map((user) => {
         props.slots.Slot.ConfirmedRequests.map((userId) => {
           if (user._id == userId) {
-            //console.log();
+            // console.log(user.name);
             ConfirmedUsers.push(user);
           }
         });
       });
+      setConfirmedUsers(ConfirmedUsers);
     }
     setConfirmedUsers(ConfirmedUsers);
   }, [users]);
+
   useEffect(() => {
+    // console.log("WAITING REQUESTS");
+
     if (props.slots.Slot.WaitingRequests != null) {
       users.map((user) => {
         props.slots.Slot.WaitingRequests.map((userId) => {
@@ -56,6 +37,7 @@ const SlotStatus = (props) => {
           }
         });
       });
+      setWaitingList(WaitingListUsers);
     }
     setWaitingList(WaitingListUsers);
   }, [users]);
@@ -66,18 +48,18 @@ const SlotStatus = (props) => {
           className="btn btn-danger mx-2 btn-sm"
           type="button"
           data-toggle="modal"
-          data-target="#staticBackdropSlotStatus"
+          data-target={`#staticBackdrop${props.slots.Slot._id}`}
         >
           status
         </button>
         <form>
           <div
             className="modal fade"
-            id="staticBackdropSlotStatus"
+            id={`staticBackdrop${props.slots.Slot._id}`}
             data-backdrop="static"
             data-keyboard="false"
             tabIndex="-1"
-            aria-labelledby="staticBackdropLabelSlotStatus"
+            aria-labelledby={`staticBackdropLabel${props.slots.Slot._id}`}
             aria-hidden="true"
           >
             <div className={`modal-dialog ${styles.modal_lg}`}>
@@ -85,9 +67,10 @@ const SlotStatus = (props) => {
                 <div className="modal-header">
                   <h3
                     className="modal-title"
-                    id="staticBackdropLabelSlotStatus"
+                    id={`staticBackdropLabel${props.slots.Slot._id}`}
                   >
-                    Slot 5 {props.slot}
+                    {props.slots.Slot.hotelName} {props.slots.Slot.outletName} -
+                    ${props.slots.Slot._id}
                   </h3>
                   <button
                     type="button"
@@ -201,7 +184,10 @@ const SlotStatus = (props) => {
                       <div className="col-auto">
                         <h4 className="d-inline">
                           Submissions{" "}
-                          <span style={{ color: "red" }}> CLOSSED </span>
+                          <span style={{ color: "red" }}>
+                            {" "}
+                            {props.slots.Slot.status}{" "}
+                          </span>
                         </h4>
                       </div>
                     </div>
@@ -221,10 +207,11 @@ const SlotStatus = (props) => {
                       </thead>
                       <tbody>
                         {confirmedUsers.map((user, i) => {
+                          console.log(user.name);
                           return (
                             <tr key={user._id}>
                               <th scope="row">{i + 1}</th>
-                              <td>{user.fullName}</td>
+                              <td>{user.name}</td>
                               <td>1025</td>
                               <td>Booked</td>
                               <td>
@@ -237,13 +224,13 @@ const SlotStatus = (props) => {
                               </td>
                             </tr>
                           );
-                          i++;
                         })}
+
                         {waitingList.map((user, i) => {
                           return (
                             <tr key={user._id}>
                               <th scope="row">{i + 1}</th>
-                              <td>{user.fullName}</td>
+                              <td>{user.name}</td>
                               <td>1025</td>
                               <td>WaitingList</td>
                               <td>
@@ -256,7 +243,6 @@ const SlotStatus = (props) => {
                               </td>
                             </tr>
                           );
-                          i++;
                         })}
                       </tbody>
                     </table>

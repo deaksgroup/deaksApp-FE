@@ -14,16 +14,13 @@ const NewGroupForm = (props) => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch(
-          "https://deaksappbe.herokuapp.com/users",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              secret_token: localStorage.getItem("JWtToken"),
-            },
-          }
-        );
+        const response = await fetch("https://deaksappbe.herokuapp.com/users", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            secret_token: localStorage.getItem("JWtToken"),
+          },
+        });
         if (!response.ok) {
           throw new Error("Something went wrong!");
         }
@@ -39,7 +36,9 @@ const NewGroupForm = (props) => {
   const titileChangeHandler = (e) => {
     setTitle(e.target.value);
   };
-
+  const deleteUser = (value) => {
+    setSelectedUsers(selectedUsers.filter((user) => user._id != value));
+  };
   axios.defaults.headers.common["secret_token"] = `${localStorage.getItem(
     "JWtToken"
   )}`;
@@ -93,7 +92,12 @@ const NewGroupForm = (props) => {
       });
   };
 
-  let Content = <GroupMembers selectedUsers={selectedUsers}></GroupMembers>;
+  let Content = (
+    <GroupMembers
+      selectedUsers={selectedUsers}
+      deleteUser={deleteUser}
+    ></GroupMembers>
+  );
   return (
     <React.Fragment>
       <button
@@ -176,7 +180,7 @@ const NewGroupForm = (props) => {
                       onSelect={handleSelectUser} // Function will trigger on select event
                       onRemove={handleRemoveUser} // Function will trigger on remove event
                       selectionLimit={50}
-                      displayValue="fullName" // Property name to display in the dropdown options
+                      displayValue="name" // Property name to display in the dropdown options
                     />
                   </div>
                 </div>

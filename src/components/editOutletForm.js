@@ -18,7 +18,7 @@ const EditOutletForm = (props) => {
   const [payment, setPayment] = useState(Outlet.payment);
   const [selectedGroups, setSelectedGroups] = useState([]);
   const [title, setTitile] = useState(Outlet.outletName);
-  const [hotel, setHotel] = useState(Outlet.hoteldetails);
+  const [hotel, setHotel] = useState(Outlet.hotelName);
   const [selectedHotel, setSelectedHotel] = useState([]);
   const [contact, setContact] = useState(Outlet.outletAdminNo);
   const [youtubeLink, setYoutubeLink] = useState(Outlet.youtubeLink);
@@ -55,39 +55,38 @@ const EditOutletForm = (props) => {
   // $("#submit-code").onclick(function() {
   //   $("div.output").html($(".support-answer-textarea").val().replace(/\n/g, "<br>"));
   // });
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await fetch(
-          "https://deaksappbe.herokuapp.com/hotelList",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              secret_token: localStorage.getItem("JWtToken"),
-            },
-          }
-        );
-        if (!response.ok) {
-          throw new Error("Something went wrong!");
-        }
-        const data = await response.json();
-        //console.log(data, "......");
-        setLoadedClients(data);
-      } catch (error) {
-        //console.log(error.message);
-      }
-    };
-    getData();
-  }, []);
-  useState(() => {
-    let selected = [];
-    selected = loadedClients.filter(
-      (hotel) => hotel._id == Outlet.hoteldetails
-    );
-    //console.log(selected, ".selected");
-    setSelectedHotel(selected);
-  }, [loadedClients]);
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     try {
+  //       const response = await fetch("https://deaksappbe.herokuapp.com/hotelList", {
+  //         method: "GET",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           secret_token: localStorage.getItem("JWtToken"),
+  //         },
+  //       });
+  //       if (!response.ok) {
+  //         throw new Error("Something went wrong!");
+  //       }
+  //       const data = await response.json();
+  //       console.log(data, "......");
+  //       setLoadedClients(data);
+  //     } catch (error) {
+  //       //console.log(error.message);
+  //     }
+  //   };
+  //   getData();
+  // }, []);
+  // useState(() => {
+  //   let selected = [];
+  //   selected = loadedClients.filter(
+  //     (hotel) => hotel._id == Outlet.hoteldetails
+  //   );
+  //   //console.log(selected, ".selected");
+  //   setSelectedHotel(selected);
+  //   console.log(loadedClients);
+  //   console.log(selectedHotel, "....selscted");
+  // }, [loadedClients]);
   //console.log(selectedHotel, "selectedHotel");
   props.outlet.outlet != null &&
     useEffect(() => {
@@ -145,9 +144,7 @@ const EditOutletForm = (props) => {
     props.outlet.outlet.outletImages.map((imageId) => {
       const preview = document.getElementById("previewImages");
       var image = new Image();
-      image.src = String(
-        `https://deaksappbe.herokuapp.com/images/${imageId}`
-      );
+      image.src = String(`https://deaksappbe.herokuapp.com/images/${imageId}`);
       //console.log(image.src, "....imgSrc");
       image.classList.add(`${styles.previewImage}`);
       preview.appendChild(image);
@@ -179,9 +176,7 @@ const EditOutletForm = (props) => {
     props.outlet.outlet.groomingImages.map((imageId) => {
       const preview = document.getElementById("previewGrooming");
       var image = new Image();
-      image.src = String(
-        `https://deaksappbe.herokuapp.com/images/${imageId}`
-      );
+      image.src = String(`https://deaksappbe.herokuapp.com/images/${imageId}`);
       //console.log(image.src, "....imgSrc");
       image.classList.add(`${styles.previewImage}`);
       preview.appendChild(image);
@@ -212,9 +207,7 @@ const EditOutletForm = (props) => {
     props.outlet.outlet.howToImages.map((imageId) => {
       const preview = document.getElementById("previewHowTo");
       var image = new Image();
-      image.src = String(
-        `https://deaksappbe.herokuapp.com/images/${imageId}`
-      );
+      image.src = String(`https://deaksappbe.herokuapp.com/images/${imageId}`);
       //console.log(image.src, "....imgSrc");
       image.classList.add(`${styles.previewImage}`);
       preview.appendChild(image);
@@ -232,6 +225,7 @@ const EditOutletForm = (props) => {
       id: props.outlet.outlet._id,
       title: title,
       hotel: hotel,
+      hotelName: Outlet.hotelName,
       address: address,
       contact: contact,
       jobRemarks: jobRemarks,
@@ -289,6 +283,7 @@ const EditOutletForm = (props) => {
     });
     setSelectedGroups(selected);
   }, [groups]);
+
   let Content = (
     <div className="eneral-margin">
       <div className={`${styles.panel} p-3 shadow`}>
@@ -359,7 +354,7 @@ const EditOutletForm = (props) => {
                 </div>
                 <div className="col">
                   <label htmlFor="hotelname">Select Hotel</label>
-                  <select
+                  {/* <select
                     name="hotelDetails"
                     id="hotelname"
                     className="form-control"
@@ -375,7 +370,18 @@ const EditOutletForm = (props) => {
                         </option>
                       );
                     })}
-                  </select>
+                  </select> */}
+                  <input
+                    disabled
+                    id="hotelDetails"
+                    type="text"
+                    className="form-control "
+                    // placeholder="Eg. Banquet.."
+                    // onChange={nameChangeHandler}
+
+                    value={hotel}
+                    // defaultValue={props.outlet.outlet.outletName}
+                  ></input>
                 </div>
               </div>
 

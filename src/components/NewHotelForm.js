@@ -81,17 +81,14 @@ const NewHotelFrom = (props) => {
     //   url: "https://deaksappbe.herokuapp.com/hotelList",
     // }).then((res) => { //console.log(res);
     // });
-    const response = await fetch(
-      "https://deaksappbe.herokuapp.com/hotelList",
-      {
-        method: "POST",
-        body: formData,
-        headers: {
-          // 'Content-Type': 'multipart/form-data',
-          secret_token: localStorage.getItem("JWtToken"),
-        },
-      }
-    );
+    const response = await fetch("https://deaksappbe.herokuapp.com/hotelList", {
+      method: "POST",
+      body: formData,
+      headers: {
+        // 'Content-Type': 'multipart/form-data',
+        secret_token: localStorage.getItem("JWtToken"),
+      },
+    });
     const ResponseData = await response;
     await props.fetchClients();
     // document.getElementById("staticBackdropHotel").modal("toggle");
