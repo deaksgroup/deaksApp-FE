@@ -1,7 +1,7 @@
 (window.webpackJsonp = window.webpackJsonp || []).push([
   [0],
   {
-    12: function(e, t, a) {
+    12: function (e, t, a) {
       e.exports = {
         "navbar-brand": "Home_navbar-brand__3CgT-",
         "nav-link": "Home_nav-link__26yho",
@@ -19,8 +19,8 @@
         notification: "Home_notification__3M0lo",
       };
     },
-    129: function(e, t, a) {},
-    13: function(e, t, a) {
+    129: function (e, t, a) {},
+    13: function (e, t, a) {
       e.exports = {
         modal_lg: "SlotStatus_modal_lg__1OHda",
         next: "SlotStatus_next__11Z0v",
@@ -35,28 +35,28 @@
         SSSearch: "SlotStatus_SSSearch__IdJ4l",
       };
     },
-    139: function(e, t, a) {},
-    145: function(e, t, a) {},
-    16: function(e, t, a) {
+    139: function (e, t, a) {},
+    145: function (e, t, a) {},
+    16: function (e, t, a) {
       e.exports = {
         layout: "NewHotelForm_layout__AdYUA",
         next: "NewHotelForm_next__338kP",
         previewImage: "NewHotelForm_previewImage__1RczM",
       };
     },
-    22: function(e, t, a) {
+    22: function (e, t, a) {
       e.exports = {
         panel: "UserDetails_panel__3zUc8",
         isVerified: "UserDetails_isVerified__BGOaT",
       };
     },
-    36: function(e, t, a) {
+    36: function (e, t, a) {
       e.exports = {
         panel: "GroupMembers_panel__nFyo6",
         total: "GroupMembers_total__2pa25",
       };
     },
-    37: function(e, t, a) {
+    37: function (e, t, a) {
       e.exports = {
         singlebar: "SingleClient_singlebar__bAAHD",
         icon: "SingleClient_icon__3hfgT",
@@ -64,16 +64,16 @@
         outlet: "SingleClient_outlet__1vvjm",
       };
     },
-    38: function(e, t, a) {
+    38: function (e, t, a) {
       e.exports = {
         panel: "Client_panel__2QJEq",
         headingbar: "Client_headingbar__sOKz0",
       };
     },
-    39: function(e, t, a) {
+    39: function (e, t, a) {
       e.exports = { panel: "Users_panel__1Lnqb", total: "Users_total__3Af05" };
     },
-    40: function(e, t, a) {
+    40: function (e, t, a) {
       e.exports = {
         panel: "NewCustomNotificationForm_panel__1W0Le",
         formStyle: "NewCustomNotificationForm_formStyle__36qY-",
@@ -84,10 +84,10 @@
         header: "NewCustomNotificationForm_header__IdY7F",
       };
     },
-    412: function(e, t, a) {
+    412: function (e, t, a) {
       e.exports = a.p + "static/media/logo.fbfa77a9.jpg";
     },
-    413: function(e, t, a) {
+    413: function (e, t, a) {
       "use strict";
       a.r(t);
       a(87);
@@ -104,7 +104,7 @@
         p = a(4),
         E = a(13),
         f = a.n(E),
-        b = function(e) {
+        b = function (e) {
           var t = Object(l.useState)([]),
             a = Object(m.a)(t, 2),
             n = a[0],
@@ -117,26 +117,25 @@
             b = Object(m.a)(E, 2),
             h = b[0],
             v = b[1];
-          Object(l.useEffect)(function() {
-            !(function() {
+          Object(l.useEffect)(function () {
+            !(function () {
               var e = Object(p.a)(
                 d.a.mark(function e() {
                   var t, a;
                   return d.a.wrap(
-                    function(e) {
+                    function (e) {
                       for (;;)
                         switch ((e.prev = e.next)) {
                           case 0:
                             return (
                               (e.prev = 0),
                               (e.next = 3),
-                              fetch("https://deaksappbe.herokuapp.com/users", {
+                              fetch("http://localhost:5002/users", {
                                 method: "GET",
                                 headers: {
                                   "Content-Type": "application/json",
-                                  secret_token: localStorage.getItem(
-                                    "JWtToken"
-                                  ),
+                                  secret_token:
+                                    localStorage.getItem("JWtToken"),
                                 },
                               })
                             );
@@ -164,7 +163,7 @@
                   );
                 })
               );
-              return function() {
+              return function () {
                 return e.apply(this, arguments);
               };
             })()();
@@ -173,10 +172,10 @@
             g = [];
           return (
             Object(l.useEffect)(
-              function() {
+              function () {
                 null != e.slots.Slot.ConfirmedRequests &&
-                  n.map(function(t) {
-                    e.slots.Slot.ConfirmedRequests.map(function(e) {
+                  n.map(function (t) {
+                    e.slots.Slot.ConfirmedRequests.map(function (e) {
                       t._id == e && N.push(t);
                     });
                   }),
@@ -185,10 +184,10 @@
               [n]
             ),
             Object(l.useEffect)(
-              function() {
+              function () {
                 null != e.slots.Slot.WaitingRequests &&
-                  n.map(function(t) {
-                    e.slots.Slot.WaitingRequests.map(function(e) {
+                  n.map(function (t) {
+                    e.slots.Slot.WaitingRequests.map(function (e) {
                       t._id == e && g.push(t);
                     });
                   }),
@@ -585,7 +584,7 @@
                               r.a.createElement(
                                 "tbody",
                                 null,
-                                i.map(function(e, t) {
+                                i.map(function (e, t) {
                                   return r.a.createElement(
                                     "tr",
                                     { key: e._id },
@@ -619,7 +618,7 @@
                                     )
                                   );
                                 }),
-                                h.map(function(e, t) {
+                                h.map(function (e, t) {
                                   return r.a.createElement(
                                     "tr",
                                     { key: e._id },
@@ -721,10 +720,10 @@
           r.a.createContext({
             viewState: "",
             content: {},
-            handleAppView: function(e) {},
-            handleContent: function(e) {},
+            handleAppView: function (e) {},
+            handleContent: function (e) {},
           })),
-        v = function(e) {
+        v = function (e) {
           var t = Object(l.useState)({}),
             a = Object(m.a)(t, 2),
             n = a[0],
@@ -738,11 +737,11 @@
             {
               value: {
                 viewState: i,
-                handleAppView: function(e) {
+                handleAppView: function (e) {
                   u(e);
                 },
                 content: n,
-                handleContent: function(e) {
+                handleContent: function (e) {
                   c(e);
                 },
               },
@@ -751,37 +750,33 @@
           );
         },
         N = h,
-        g = function() {
+        g = function () {
           Object(l.useContext)(N);
           var e = Object(l.useState)([]),
             t = Object(m.a)(e, 2),
             a = t[0],
             n = t[1];
-          Object(l.useEffect)(function() {
-            !(function() {
+          Object(l.useEffect)(function () {
+            !(function () {
               var e = Object(p.a)(
                 d.a.mark(function e() {
                   var t, a;
                   return d.a.wrap(
-                    function(e) {
+                    function (e) {
                       for (;;)
                         switch ((e.prev = e.next)) {
                           case 0:
                             return (
                               (e.prev = 0),
                               (e.next = 3),
-                              fetch(
-                                "https://deaksappbe.herokuapp.com/slotList",
-                                {
-                                  method: "GET",
-                                  headers: {
-                                    "Content-Type": "application/json",
-                                    secret_token: localStorage.getItem(
-                                      "JWtToken"
-                                    ),
-                                  },
-                                }
-                              )
+                              fetch("http://localhost:5002/slotList", {
+                                method: "GET",
+                                headers: {
+                                  "Content-Type": "application/json",
+                                  secret_token:
+                                    localStorage.getItem("JWtToken"),
+                                },
+                              })
                             );
                           case 3:
                             if ((t = e.sent).ok) {
@@ -807,23 +802,23 @@
                   );
                 })
               );
-              return function() {
+              return function () {
                 return e.apply(this, arguments);
               };
             })()();
           }, []);
-          var c = (function() {
+          var c = (function () {
             var e = Object(p.a)(
               d.a.mark(function e(t) {
                 var a;
-                return d.a.wrap(function(e) {
+                return d.a.wrap(function (e) {
                   for (;;)
                     switch ((e.prev = e.next)) {
                       case 0:
                         return (
                           (e.next = 2),
                           fetch(
-                            "https://deaksappbe.herokuapp.com/slotList/".concat(
+                            "http://localhost:5002/slotList/".concat(
                               t.target.value
                             ),
                             {
@@ -845,7 +840,7 @@
                 }, e);
               })
             );
-            return function(t) {
+            return function (t) {
               return e.apply(this, arguments);
             };
           })();
@@ -874,7 +869,7 @@
                 r.a.createElement(
                   "tbody",
                   null,
-                  a.map(function(e, t) {
+                  a.map(function (e, t) {
                     return r.a.createElement(
                       "tr",
                       { key: e._id },
@@ -906,7 +901,7 @@
             )
           );
         },
-        w = function() {
+        w = function () {
           var e = Object(l.useContext)(N);
           return r.a.createElement(
             r.a.Fragment,
@@ -946,7 +941,7 @@
                           "button",
                           {
                             className: "btn btn-sm btn-danger ml-auto",
-                            onClick: function() {
+                            onClick: function () {
                               e.handleAppView("new-slot-form");
                             },
                             style: {
@@ -1011,7 +1006,7 @@
         C = a.n(x),
         F = a(17),
         I = a.n(F),
-        T = function() {
+        T = function () {
           var e = Object(l.useContext)(N),
             t = Object(l.useState)([]),
             a = Object(m.a)(t, 2),
@@ -1080,43 +1075,37 @@
           C.a.defaults.headers.common.secret_token = "".concat(
             localStorage.getItem("JWtToken")
           );
-          Object(l.useEffect)(function() {
-            C()("https://deaksappbe.herokuapp.com/groupList/all").then(function(
-              e
-            ) {
+          Object(l.useEffect)(function () {
+            C()("http://localhost:5002/groupList/all").then(function (e) {
               h(e.data);
             });
           }, []),
-            Object(l.useEffect)(function() {
-              C()("https://deaksappbe.herokuapp.com/users").then(function(e) {
+            Object(l.useEffect)(function () {
+              C()("http://localhost:5002/users").then(function (e) {
                 S(e.data);
               });
             }, []),
-            Object(l.useEffect)(function() {
-              !(function() {
+            Object(l.useEffect)(function () {
+              !(function () {
                 var e = Object(p.a)(
                   d.a.mark(function e() {
                     var t, a;
                     return d.a.wrap(
-                      function(e) {
+                      function (e) {
                         for (;;)
                           switch ((e.prev = e.next)) {
                             case 0:
                               return (
                                 (e.prev = 0),
                                 (e.next = 3),
-                                fetch(
-                                  "https://deaksappbe.herokuapp.com/hotelList",
-                                  {
-                                    method: "GET",
-                                    headers: {
-                                      "Content-Type": "application/json",
-                                      secret_token: localStorage.getItem(
-                                        "JWtToken"
-                                      ),
-                                    },
-                                  }
-                                )
+                                fetch("http://localhost:5002/hotelList", {
+                                  method: "GET",
+                                  headers: {
+                                    "Content-Type": "application/json",
+                                    secret_token:
+                                      localStorage.getItem("JWtToken"),
+                                  },
+                                })
                               );
                             case 3:
                               if ((t = e.sent).ok) {
@@ -1142,16 +1131,16 @@
                     );
                   })
                 );
-                return function() {
+                return function () {
                   return e.apply(this, arguments);
                 };
               })()();
             }, []),
-            Object(l.useEffect)(function() {});
+            Object(l.useEffect)(function () {});
           Object(l.useEffect)(
-            function() {
+            function () {
               x(
-                b.filter(function(e) {
+                b.filter(function (e) {
                   return Ne._id === e.outletId;
                 })
               );
@@ -1159,13 +1148,13 @@
             [b, Ne]
           ),
             Object(l.useEffect)(
-              function() {
-                !(function() {
+              function () {
+                !(function () {
                   var e = Object(p.a)(
                     d.a.mark(function e() {
                       var t, a;
                       return d.a.wrap(
-                        function(e) {
+                        function (e) {
                           for (;;)
                             switch ((e.prev = e.next)) {
                               case 0:
@@ -1173,16 +1162,15 @@
                                   (e.prev = 0),
                                   (e.next = 3),
                                   fetch(
-                                    "https://deaksappbe.herokuapp.com/adminoutletList/".concat(
+                                    "http://localhost:5002/adminoutletList/".concat(
                                       fe
                                     ),
                                     {
                                       method: "GET",
                                       headers: {
                                         "Content-Type": "application/json",
-                                        secret_token: localStorage.getItem(
-                                          "JWtToken"
-                                        ),
+                                        secret_token:
+                                          localStorage.getItem("JWtToken"),
                                       },
                                     }
                                   )
@@ -1211,7 +1199,7 @@
                       );
                     })
                   );
-                  return function() {
+                  return function () {
                     return e.apply(this, arguments);
                   };
                 })()();
@@ -1220,7 +1208,7 @@
             );
           window.addEventListener(
             "keypress",
-            function(e) {
+            function (e) {
               "Enter" === e.key &&
                 I()(e.target)[0] != I()("textarea")[0] &&
                 e.preventDefault();
@@ -1236,10 +1224,10 @@
               r.a.createElement(
                 "form",
                 {
-                  onSubmit: function(t) {
+                  onSubmit: function (t) {
                     var a;
                     t.preventDefault(),
-                      (a = A.filter(function(e) {
+                      (a = A.filter(function (e) {
                         return e._id == fe;
                       })),
                       e.handleAppView("slots"),
@@ -1258,9 +1246,9 @@
                       totalpay: oe,
                     };
                     C.a
-                      .post("https://deaksappbe.herokuapp.com/slotList", n)
-                      .then(function(e) {})
-                      .then(function() {});
+                      .post("http://localhost:5002/slotList", n)
+                      .then(function (e) {})
+                      .then(function () {});
                   },
                 },
                 r.a.createElement(
@@ -1318,7 +1306,7 @@
                         required: !0,
                         type: "date",
                         className: k.a.NSFDate,
-                        onChange: function(e) {
+                        onChange: function (e) {
                           de(e.target.value);
                         },
                       })
@@ -1351,13 +1339,13 @@
                           id: "inputState",
                           className: "form-control",
                           name: "hotelDetails",
-                          onChange: function(e) {
+                          onChange: function (e) {
                             be(e.target.value);
                           },
                         },
                         r.a.createElement("option", null),
                         null != A &&
-                          A.map(function(e) {
+                          A.map(function (e) {
                             return r.a.createElement(
                               "option",
                               { key: e._id, value: e._id },
@@ -1377,9 +1365,9 @@
                       r.a.createElement(
                         "select",
                         {
-                          onChange: function(e) {
+                          onChange: function (e) {
                             ge(
-                              B.filter(function(t) {
+                              B.filter(function (t) {
                                 return t._id === e.target.value;
                               })[0]
                             );
@@ -1389,7 +1377,7 @@
                         },
                         r.a.createElement("option", null),
                         null != B &&
-                          B.map(function(e) {
+                          B.map(function (e) {
                             return r.a.createElement(
                               "option",
                               { key: e._id, value: e._id },
@@ -1432,7 +1420,7 @@
                       r.a.createElement("input", {
                         required: !0,
                         type: "time",
-                        onChange: function(e) {
+                        onChange: function (e) {
                           q(e.target.value);
                         },
                         className: k.a.NSFTime,
@@ -1449,7 +1437,7 @@
                       r.a.createElement("input", {
                         required: !0,
                         type: "time",
-                        onChange: function(e) {
+                        onChange: function (e) {
                           M(e.target.value);
                         },
                         className: k.a.NSFTime,
@@ -1465,7 +1453,7 @@
                       r.a.createElement("label", null, "Requested Vacancies"),
                       r.a.createElement("input", {
                         required: !0,
-                        onChange: function(e) {
+                        onChange: function (e) {
                           Y(e.target.value);
                         },
                         value: X,
@@ -1479,7 +1467,7 @@
                       r.a.createElement("label", null, "Releasing Vacancies"),
                       r.a.createElement("input", {
                         required: !0,
-                        onChange: function(e) {
+                        onChange: function (e) {
                           ee(e.target.value);
                         },
                         value: $,
@@ -1508,10 +1496,10 @@
                           .concat(k.a.ighlightOption),
                         options: _,
                         selectedValues: i,
-                        onSelect: function(e) {
+                        onSelect: function (e) {
                           u(e);
                         },
-                        onRemove: function(e) {
+                        onRemove: function (e) {
                           u(e);
                         },
                         displayValue: "groupTitle",
@@ -1538,10 +1526,10 @@
                           .concat(k.a.ighlightOption),
                         options: w,
                         selectedValues: n,
-                        onSelect: function(e) {
+                        onSelect: function (e) {
                           c(e);
                         },
-                        onRemove: function(e) {
+                        onRemove: function (e) {
                           c(e);
                         },
                         selectionLimit: 4,
@@ -1558,7 +1546,7 @@
                       r.a.createElement("label", null, "Pay per hour"),
                       r.a.createElement("input", {
                         required: !0,
-                        onChange: function(e) {
+                        onChange: function (e) {
                           le(e.target.value);
                           var t = H.split(/[.:]/);
                           parseInt(t[0], 10), t[1] && parseInt(t[1], 10);
@@ -1576,7 +1564,7 @@
                         value: oe,
                         type: "number",
                         className: k.a.pay,
-                        onChange: function(e) {
+                        onChange: function (e) {
                           me(e.target.value);
                         },
                       })
@@ -1606,7 +1594,7 @@
         L = a.n(A),
         D = a(84),
         G = a.n(D),
-        B = function(e) {
+        B = function (e) {
           return r.a.createElement(
             r.a.Fragment,
             null,
@@ -1643,7 +1631,7 @@
               r.a.createElement(
                 "tbody",
                 null,
-                e.selectedUsers.map(function(e) {
+                e.selectedUsers.map(function (e) {
                   return r.a.createElement(
                     "tr",
                     { key: e._id },
@@ -1668,7 +1656,7 @@
         },
         V = a(36),
         J = a.n(V),
-        R = function(e) {
+        R = function (e) {
           return r.a.createElement(
             r.a.Fragment,
             null,
@@ -1721,7 +1709,7 @@
             )
           );
         },
-        H = function(e) {
+        H = function (e) {
           var t = Object(l.useState)([]),
             a = Object(m.a)(t, 2),
             n = a[0],
@@ -1738,26 +1726,25 @@
             N = Object(m.a)(v, 2),
             g = N[0],
             w = N[1];
-          Object(l.useEffect)(function() {
-            !(function() {
+          Object(l.useEffect)(function () {
+            !(function () {
               var e = Object(p.a)(
                 d.a.mark(function e() {
                   var t, a;
                   return d.a.wrap(
-                    function(e) {
+                    function (e) {
                       for (;;)
                         switch ((e.prev = e.next)) {
                           case 0:
                             return (
                               (e.prev = 0),
                               (e.next = 3),
-                              fetch("https://deaksappbe.herokuapp.com/users", {
+                              fetch("http://localhost:5002/users", {
                                 method: "GET",
                                 headers: {
                                   "Content-Type": "application/json",
-                                  secret_token: localStorage.getItem(
-                                    "JWtToken"
-                                  ),
+                                  secret_token:
+                                    localStorage.getItem("JWtToken"),
                                 },
                               })
                             );
@@ -1785,7 +1772,7 @@
                   );
                 })
               );
-              return function() {
+              return function () {
                 return e.apply(this, arguments);
               };
             })()();
@@ -1793,29 +1780,26 @@
           C.a.defaults.headers.common.secret_token = "".concat(
             localStorage.getItem("JWtToken")
           );
-          var S = (function() {
+          var S = (function () {
               var t = Object(p.a)(
                 d.a.mark(function t() {
                   var a;
-                  return d.a.wrap(function(t) {
+                  return d.a.wrap(function (t) {
                     for (;;)
                       switch ((t.prev = t.next)) {
                         case 0:
                           (a = []),
-                            n.map(function(e) {
+                            n.map(function (e) {
                               a.push(e._id);
                             }),
                             C.a
-                              .post(
-                                "https://deaksappbe.herokuapp.com/groupList",
-                                {
-                                  outletId: e.outlet.outlet._id,
-                                  title: i,
-                                  users: a,
-                                }
-                              )
-                              .then(function(e) {})
-                              .then(function() {
+                              .post("http://localhost:5002/groupList", {
+                                outletId: e.outlet.outlet._id,
+                                title: i,
+                                users: a,
+                              })
+                              .then(function (e) {})
+                              .then(function () {
                                 e.fetchGroups();
                               });
                         case 3:
@@ -1825,7 +1809,7 @@
                   }, t);
                 })
               );
-              return function() {
+              return function () {
                 return t.apply(this, arguments);
               };
             })(),
@@ -1974,7 +1958,7 @@
                               type: "text",
                               className: "form-control ",
                               placeholder: "Eg. Group ",
-                              onChange: function(e) {
+                              onChange: function (e) {
                                 u(e.target.value);
                               },
                               value: i,
@@ -2002,10 +1986,10 @@
                               .concat(L.a.ighlightOption),
                             options: g,
                             selectedValues: n,
-                            onSelect: function(e) {
+                            onSelect: function (e) {
                               c(e);
                             },
-                            onRemove: function(e) {
+                            onRemove: function (e) {
                               c(e);
                             },
                             selectionLimit: 50,
@@ -2048,7 +2032,7 @@
         U = a.n(q),
         W = a(16),
         P = a.n(W),
-        M = function(e) {
+        M = function (e) {
           var t = Object(l.useState)("edit" == e.edit ? e.hotel._id : ""),
             a = Object(m.a)(t, 2),
             n =
@@ -2074,11 +2058,11 @@
             O = Object(m.a)(j, 2),
             _ = O[0],
             k = O[1],
-            x = (function() {
+            x = (function () {
               var t = Object(p.a)(
                 d.a.mark(function t(a) {
                   var n, l, r;
-                  return d.a.wrap(function(t) {
+                  return d.a.wrap(function (t) {
                     for (;;)
                       switch ((t.prev = t.next)) {
                         case 0:
@@ -2091,24 +2075,19 @@
                               latitude: _,
                             }),
                             (l = new FormData()),
-                            Object.keys(v).map(function(e, t) {
+                            Object.keys(v).map(function (e, t) {
                               l.append("logo", v[e]);
                             }),
                             l.append("state", JSON.stringify(n)),
                             localStorage.getItem("JWTTOken"),
                             (t.next = 8),
-                            fetch(
-                              "https://deaksappbe.herokuapp.com/hotelList",
-                              {
-                                method: "POST",
-                                body: l,
-                                headers: {
-                                  secret_token: localStorage.getItem(
-                                    "JWtToken"
-                                  ),
-                                },
-                              }
-                            )
+                            fetch("http://localhost:5002/hotelList", {
+                              method: "POST",
+                              body: l,
+                              headers: {
+                                secret_token: localStorage.getItem("JWtToken"),
+                              },
+                            })
                           );
                         case 8:
                           return (r = t.sent), (t.next = 11), r;
@@ -2121,7 +2100,7 @@
                   }, t);
                 })
               );
-              return function(e) {
+              return function (e) {
                 return t.apply(this, arguments);
               };
             })();
@@ -2201,7 +2180,7 @@
                             className: "form-control ",
                             placeholder: "Hotel name",
                             value: o,
-                            onChange: function(e) {
+                            onChange: function (e) {
                               s(e.target.value);
                             },
                             required: !0,
@@ -2215,7 +2194,7 @@
                             className: "form-control",
                             placeholder: "SOA Mail",
                             value: E,
-                            onChange: function(e) {
+                            onChange: function (e) {
                               f(e.target.value);
                             },
                             required: !0,
@@ -2234,14 +2213,14 @@
                           type: "file",
                           className: "form-control-file",
                           id: "exampleFormControlFile1",
-                          onChange: function(e) {
+                          onChange: function (e) {
                             N(e.target.files);
                             var t = document.getElementById("previewImages");
-                            Array.from(e.target.files).forEach(function(e) {
+                            Array.from(e.target.files).forEach(function (e) {
                               for (var a = new FileReader(); t.firstChild; )
                                 t.removeChild(t.firstChild);
                               a.abort(),
-                                (a.onload = function() {
+                                (a.onload = function () {
                                   var e = new Image();
                                   (e.src = String(a.result)),
                                     e.classList.add(
@@ -2273,7 +2252,7 @@
                               className: "form-control ",
                               placeholder: "Longitude",
                               value: S,
-                              onChange: function(e) {
+                              onChange: function (e) {
                                 y(e.target.value);
                               },
                             })
@@ -2287,7 +2266,7 @@
                               className: "form-control",
                               placeholder: "Latitude",
                               value: _,
-                              onChange: function(e) {
+                              onChange: function (e) {
                                 k(e.target.value);
                               },
                             })
@@ -2319,7 +2298,7 @@
             )
           );
         },
-        z = function(e) {
+        z = function (e) {
           var t = Object(l.useState)(e.hotel._id),
             a = Object(m.a)(t, 2),
             n = (a[0], a[1], Object(l.useState)(e.hotel.hotelName)),
@@ -2342,24 +2321,22 @@
             O = Object(m.a)(j, 2),
             _ = O[0],
             k = O[1];
-          Object(l.useEffect)(function() {
+          Object(l.useEffect)(function () {
             var t = document.getElementById(
                 "previewImages".concat(e.hotel._id)
               ),
               a = new Image();
             (a.src = String(
-              "https://deaksappbe.herokuapp.com/images/".concat(
-                e.hotel.hotelEmblem
-              )
+              "http://localhost:5002/images/".concat(e.hotel.hotelEmblem)
             )),
               a.classList.add("".concat(P.a.previewImage)),
               t.appendChild(a);
           }, []);
-          var x = (function() {
+          var x = (function () {
             var t = Object(p.a)(
               d.a.mark(function t(a) {
                 var n, l, r;
-                return d.a.wrap(function(t) {
+                return d.a.wrap(function (t) {
                   for (;;)
                     switch ((t.prev = t.next)) {
                       case 0:
@@ -2373,13 +2350,13 @@
                             latitude: _,
                           }),
                           (l = new FormData()),
-                          Object.keys(v).map(function(e, t) {
+                          Object.keys(v).map(function (e, t) {
                             l.append("logo", v[e]);
                           }),
                           l.append("state", JSON.stringify(n)),
                           localStorage.getItem("JWTTOken"),
                           (t.next = 8),
-                          fetch("https://deaksappbe.herokuapp.com/hotelList", {
+                          fetch("http://localhost:5002/hotelList", {
                             method: "PATCH",
                             body: l,
                             headers: {
@@ -2398,7 +2375,7 @@
                 }, t);
               })
             );
-            return function(e) {
+            return function (e) {
               return t.apply(this, arguments);
             };
           })();
@@ -2481,7 +2458,7 @@
                             className: "form-control ",
                             placeholder: "Hotel name",
                             value: o,
-                            onChange: function(e) {
+                            onChange: function (e) {
                               s(e.target.value);
                             },
                             required: !0,
@@ -2495,7 +2472,7 @@
                             className: "form-control",
                             placeholder: "SOA Mail",
                             value: E,
-                            onChange: function(e) {
+                            onChange: function (e) {
                               f(e.target.value);
                             },
                             required: !0,
@@ -2514,16 +2491,16 @@
                           type: "file",
                           className: "form-control-file",
                           id: "exampleFormControlFile1",
-                          onChange: function(t) {
+                          onChange: function (t) {
                             N(t.target.files);
                             var a = document.getElementById(
                               "previewImages".concat(e.hotel._id)
                             );
-                            Array.from(t.target.files).forEach(function(e) {
+                            Array.from(t.target.files).forEach(function (e) {
                               for (var t = new FileReader(); a.firstChild; )
                                 a.removeChild(a.firstChild);
                               t.abort(),
-                                (t.onload = function() {
+                                (t.onload = function () {
                                   var e = new Image();
                                   (e.src = String(t.result)),
                                     e.classList.add(
@@ -2556,7 +2533,7 @@
                               className: "form-control ",
                               placeholder: "Longitude",
                               value: S,
-                              onChange: function(e) {
+                              onChange: function (e) {
                                 y(e.target.value);
                               },
                             })
@@ -2570,7 +2547,7 @@
                               className: "form-control",
                               placeholder: "Latitude",
                               value: _,
-                              onChange: function(e) {
+                              onChange: function (e) {
                                 k(e.target.value);
                               },
                             })
@@ -2602,19 +2579,19 @@
             )
           );
         },
-        Z = function(e) {
+        Z = function (e) {
           var t = Object(l.useContext)(N),
             a = Object(l.useState)([]),
             n = Object(m.a)(a, 2),
             c = n[0],
             o = n[1];
-          Object(l.useEffect)(function() {
-            !(function() {
+          Object(l.useEffect)(function () {
+            !(function () {
               var t = Object(p.a)(
                 d.a.mark(function t() {
                   var a, n;
                   return d.a.wrap(
-                    function(t) {
+                    function (t) {
                       for (;;)
                         switch ((t.prev = t.next)) {
                           case 0:
@@ -2622,16 +2599,15 @@
                               (t.prev = 0),
                               (t.next = 3),
                               fetch(
-                                "https://deaksappbe.herokuapp.com/adminoutletList/".concat(
+                                "http://localhost:5002/adminoutletList/".concat(
                                   e.hotel._id
                                 ),
                                 {
                                   method: "GET",
                                   headers: {
                                     "Content-Type": "application/json",
-                                    secret_token: localStorage.getItem(
-                                      "JWtToken"
-                                    ),
+                                    secret_token:
+                                      localStorage.getItem("JWtToken"),
                                   },
                                 }
                               )
@@ -2660,31 +2636,30 @@
                   );
                 })
               );
-              return function() {
+              return function () {
                 return t.apply(this, arguments);
               };
             })()();
           }, []);
-          var s = (function() {
+          var s = (function () {
               var t = Object(p.a)(
                 d.a.mark(function t(a) {
                   var n;
-                  return d.a.wrap(function(t) {
+                  return d.a.wrap(function (t) {
                     for (;;)
                       switch ((t.prev = t.next)) {
                         case 0:
                           return (
                             (t.next = 2),
                             fetch(
-                              "https://deaksappbe.herokuapp.com/hotelList/".concat(
+                              "http://localhost:5002/hotelList/".concat(
                                 a.target.value
                               ),
                               {
                                 method: "DELETE",
                                 headers: {
-                                  secret_token: localStorage.getItem(
-                                    "JWtToken"
-                                  ),
+                                  secret_token:
+                                    localStorage.getItem("JWtToken"),
                                 },
                               }
                             )
@@ -2700,40 +2675,39 @@
                   }, t);
                 })
               );
-              return function(e) {
+              return function (e) {
                 return t.apply(this, arguments);
               };
             })(),
-            i = function(a) {
-              var n = c.filter(function(e) {
+            i = function (a) {
+              var n = c.filter(function (e) {
                 return e._id == a.target.value;
               });
               e.editOutlet({ outlet: n[0] }),
                 t.handleAppView("edit-outlet-form");
             },
-            u = function() {
+            u = function () {
               e.fetchGroups();
             },
-            E = (function() {
+            E = (function () {
               var e = Object(p.a)(
                 d.a.mark(function e(t) {
                   var a;
-                  return d.a.wrap(function(e) {
+                  return d.a.wrap(function (e) {
                     for (;;)
                       switch ((e.prev = e.next)) {
                         case 0:
                           return (
                             (e.next = 2),
                             fetch(
-                              "https://deaksappbe.herokuapp.com/outletList/".concat(
+                              "http://localhost:5002/outletList/".concat(
                                 t.target.value
                               ),
                               {
                                 method: "DELETE",
                                 headers: {
-                                  secret_token: localStorage.getItem(
-                                    "JWtToken"
-                                  ),
+                                  secret_token:
+                                    localStorage.getItem("JWtToken"),
                                 },
                               }
                             )
@@ -2749,7 +2723,7 @@
                   }, e);
                 })
               );
-              return function(t) {
+              return function (t) {
                 return e.apply(this, arguments);
               };
             })();
@@ -2786,9 +2760,10 @@
                     "Delete"
                   ),
                   r.a.createElement("i", {
-                    className: "bi bi-caret-down-square-fill p-auto ml-2 ".concat(
-                      U.a.icon
-                    ),
+                    className:
+                      "bi bi-caret-down-square-fill p-auto ml-2 ".concat(
+                        U.a.icon
+                      ),
                   })
                 )
               ),
@@ -2808,7 +2783,7 @@
                     )
                   )
                 ),
-                c.map(function(e) {
+                c.map(function (e) {
                   return r.a.createElement(
                     "div",
                     { key: e._id, className: U.a.outlet },
@@ -2855,7 +2830,7 @@
             )
           );
         },
-        X = function(e) {
+        X = function (e) {
           var t = Object(l.useState)([]),
             a = Object(m.a)(t, 2),
             n = a[0],
@@ -2865,37 +2840,33 @@
             i = s[0],
             u = s[1];
           Object(l.useEffect)(
-            function() {
+            function () {
               u(e.refresh);
             },
             [e.refresh]
           ),
             Object(l.useEffect)(
-              function() {
-                !(function() {
+              function () {
+                !(function () {
                   var e = Object(p.a)(
                     d.a.mark(function e() {
                       var t, a;
                       return d.a.wrap(
-                        function(e) {
+                        function (e) {
                           for (;;)
                             switch ((e.prev = e.next)) {
                               case 0:
                                 return (
                                   (e.prev = 0),
                                   (e.next = 3),
-                                  fetch(
-                                    "https://deaksappbe.herokuapp.com/hotelList",
-                                    {
-                                      method: "GET",
-                                      headers: {
-                                        "Content-Type": "application/json",
-                                        secret_token: localStorage.getItem(
-                                          "JWtToken"
-                                        ),
-                                      },
-                                    }
-                                  )
+                                  fetch("http://localhost:5002/hotelList", {
+                                    method: "GET",
+                                    headers: {
+                                      "Content-Type": "application/json",
+                                      secret_token:
+                                        localStorage.getItem("JWtToken"),
+                                    },
+                                  })
                                 );
                               case 3:
                                 if ((t = e.sent).ok) {
@@ -2921,20 +2892,20 @@
                       );
                     })
                   );
-                  return function() {
+                  return function () {
                     return e.apply(this, arguments);
                   };
                 })()();
               },
               [i]
             );
-          var E = function(t) {
+          var E = function (t) {
               e.editOutlet(t);
             },
-            f = function() {
+            f = function () {
               e.fetchGroups();
             },
-            b = function() {
+            b = function () {
               u("now");
             };
           return r.a.createElement(
@@ -2943,7 +2914,7 @@
             r.a.createElement(
               "div",
               { className: "mt-4" },
-              n.map(function(e) {
+              n.map(function (e) {
                 return r.a.createElement(Z, {
                   key: e._id,
                   hotel: e,
@@ -2957,7 +2928,7 @@
         },
         Y = a(38),
         Q = a.n(Y),
-        K = function(e) {
+        K = function (e) {
           var t = Object(l.useContext)(N),
             a = Object(l.useState)([]),
             n = Object(m.a)(a, 2),
@@ -2966,26 +2937,25 @@
             s = Object(m.a)(o, 2),
             i = s[0],
             u = s[1];
-          Object(l.useEffect)(function() {
-            !(function() {
+          Object(l.useEffect)(function () {
+            !(function () {
               var e = Object(p.a)(
                 d.a.mark(function e() {
                   var t, a;
                   return d.a.wrap(
-                    function(e) {
+                    function (e) {
                       for (;;)
                         switch ((e.prev = e.next)) {
                           case 0:
                             return (
                               (e.prev = 0),
                               (e.next = 3),
-                              fetch("https://deaksappbe.herokuapp.com/users", {
+                              fetch("http://localhost:5002/users", {
                                 method: "GET",
                                 headers: {
                                   "Content-Type": "application/json",
-                                  secret_token: localStorage.getItem(
-                                    "JWtToken"
-                                  ),
+                                  secret_token:
+                                    localStorage.getItem("JWtToken"),
                                 },
                               })
                             );
@@ -3013,7 +2983,7 @@
                   );
                 })
               );
-              return function() {
+              return function () {
                 return e.apply(this, arguments);
               };
             })()();
@@ -3050,7 +3020,7 @@
                       },
                       r.a.createElement(M, {
                         edit: null,
-                        fetchClients: function() {
+                        fetchClients: function () {
                           u("now");
                         },
                       }),
@@ -3058,7 +3028,7 @@
                         "button",
                         {
                           className: "btn btn-sm btn-danger ml-2",
-                          onClick: function() {
+                          onClick: function () {
                             t.handleAppView("new-outlet-form");
                           },
                           style: {
@@ -3102,10 +3072,10 @@
                 ),
                 r.a.createElement(X, {
                   refresh: i,
-                  editOutlet: function(t) {
+                  editOutlet: function (t) {
                     e.editOutlet(t);
                   },
-                  fetchGroups: function() {
+                  fetchGroups: function () {
                     e.fetchGroups();
                   },
                 })
@@ -3117,7 +3087,7 @@
         ee = a.n($),
         te = a(85),
         ae = a.n(te),
-        ne = function(e) {
+        ne = function (e) {
           var t = Object(l.useContext)(N),
             a = Object(l.useState)([]),
             n = Object(m.a)(a, 2),
@@ -3126,26 +3096,25 @@
             s = Object(l.useState)(),
             i = Object(m.a)(s, 2);
           i[0], i[1];
-          Object(l.useEffect)(function() {
-            !(function() {
+          Object(l.useEffect)(function () {
+            !(function () {
               var e = Object(p.a)(
                 d.a.mark(function e() {
                   var t, a;
                   return d.a.wrap(
-                    function(e) {
+                    function (e) {
                       for (;;)
                         switch ((e.prev = e.next)) {
                           case 0:
                             return (
                               (e.prev = 0),
                               (e.next = 3),
-                              fetch("https://deaksappbe.herokuapp.com/users", {
+                              fetch("http://localhost:5002/users", {
                                 method: "GET",
                                 headers: {
                                   "Content-Type": "application/json",
-                                  secret_token: localStorage.getItem(
-                                    "JWtToken"
-                                  ),
+                                  secret_token:
+                                    localStorage.getItem("JWtToken"),
                                 },
                               })
                             );
@@ -3173,13 +3142,13 @@
                   );
                 })
               );
-              return function() {
+              return function () {
                 return e.apply(this, arguments);
               };
             })()();
           }, []);
-          var u = function(a) {
-            var n = c.filter(function(e) {
+          var u = function (a) {
+            var n = c.filter(function (e) {
               return e._id == a.target.value;
             });
             e.editUser({ user: n[0], action: "edit" }),
@@ -3221,7 +3190,7 @@
               r.a.createElement(
                 "tbody",
                 null,
-                c.map(function(e) {
+                c.map(function (e) {
                   return r.a.createElement(
                     "tr",
                     { key: e._id },
@@ -3258,7 +3227,7 @@
             )
           );
         },
-        le = function(e) {
+        le = function (e) {
           return r.a.createElement(
             r.a.Fragment,
             null,
@@ -3307,7 +3276,7 @@
                   r.a.createElement("hr", null)
                 ),
                 r.a.createElement(ne, {
-                  editUser: function(t) {
+                  editUser: function (t) {
                     e.editUser(t);
                   },
                 })
@@ -3315,7 +3284,7 @@
             )
           );
         },
-        re = function(e) {
+        re = function (e) {
           var t = Object(l.useState)([]),
             a = Object(m.a)(t, 2),
             n = a[0],
@@ -3332,26 +3301,25 @@
             N = Object(m.a)(v, 2),
             g = N[0],
             w = N[1];
-          Object(l.useEffect)(function() {
-            !(function() {
+          Object(l.useEffect)(function () {
+            !(function () {
               var e = Object(p.a)(
                 d.a.mark(function e() {
                   var t, a;
                   return d.a.wrap(
-                    function(e) {
+                    function (e) {
                       for (;;)
                         switch ((e.prev = e.next)) {
                           case 0:
                             return (
                               (e.prev = 0),
                               (e.next = 3),
-                              fetch("https://deaksappbe.herokuapp.com/users", {
+                              fetch("http://localhost:5002/users", {
                                 method: "GET",
                                 headers: {
                                   "Content-Type": "application/json",
-                                  secret_token: localStorage.getItem(
-                                    "JWtToken"
-                                  ),
+                                  secret_token:
+                                    localStorage.getItem("JWtToken"),
                                 },
                               })
                             );
@@ -3379,16 +3347,16 @@
                   );
                 })
               );
-              return function() {
+              return function () {
                 return e.apply(this, arguments);
               };
             })()();
           }, []),
             Object(l.useEffect)(
-              function() {
+              function () {
                 var t = [];
-                e.group.groupMembers.map(function(e) {
-                  g.map(function(a) {
+                e.group.groupMembers.map(function (e) {
+                  g.map(function (a) {
                     a._id == e && t.push(a);
                   });
                 }),
@@ -3399,30 +3367,27 @@
           C.a.defaults.headers.common.secret_token = "".concat(
             localStorage.getItem("JWtToken")
           );
-          var S = (function() {
+          var S = (function () {
               var t = Object(p.a)(
                 d.a.mark(function t() {
                   var a;
-                  return d.a.wrap(function(t) {
+                  return d.a.wrap(function (t) {
                     for (;;)
                       switch ((t.prev = t.next)) {
                         case 0:
                           (a = []),
-                            n.map(function(e) {
+                            n.map(function (e) {
                               a.push(e._id);
                             }),
                             C.a
-                              .patch(
-                                "https://deaksappbe.herokuapp.com/groupList",
-                                {
-                                  outletId: e.group.outletId,
-                                  groupId: e.group._id,
-                                  title: i,
-                                  users: a,
-                                }
-                              )
-                              .then(function(e) {})
-                              .then(function() {
+                              .patch("http://localhost:5002/groupList", {
+                                outletId: e.group.outletId,
+                                groupId: e.group._id,
+                                title: i,
+                                users: a,
+                              })
+                              .then(function (e) {})
+                              .then(function () {
                                 e.fetchGroups();
                               });
                         case 3:
@@ -3432,7 +3397,7 @@
                   }, t);
                 })
               );
-              return function() {
+              return function () {
                 return t.apply(this, arguments);
               };
             })(),
@@ -3573,7 +3538,7 @@
                               type: "text",
                               className: "form-control ",
                               placeholder: "Eg. Group ",
-                              onChange: function(e) {
+                              onChange: function (e) {
                                 u(e.target.value);
                               },
                               value: i,
@@ -3601,10 +3566,10 @@
                               .concat(L.a.ighlightOption),
                             options: g,
                             selectedValues: n,
-                            onSelect: function(e) {
+                            onSelect: function (e) {
                               c(e);
                             },
-                            onRemove: function(e) {
+                            onRemove: function (e) {
                               c(e);
                             },
                             selectionLimit: 50,
@@ -3641,19 +3606,17 @@
         },
         ce =
           (a(139),
-          function(e) {
+          function (e) {
             C.a.defaults.headers.common.secret_token = "".concat(
               localStorage.getItem("JWtToken")
             );
-            var t = function(t) {
+            var t = function (t) {
               C.a
                 .delete(
-                  "https://deaksappbe.herokuapp.com/groupList/".concat(
-                    t.target.value
-                  )
+                  "http://localhost:5002/groupList/".concat(t.target.value)
                 )
-                .then(function(e) {})
-                .then(function() {
+                .then(function (e) {})
+                .then(function () {
                   e.fetchGroups();
                 });
             };
@@ -3682,7 +3645,7 @@
                   r.a.createElement(
                     "tbody",
                     null,
-                    e.groups.map(function(e) {
+                    e.groups.map(function (e) {
                       return r.a.createElement(
                         "tr",
                         { key: e._id },
@@ -3719,7 +3682,7 @@
         me = a.n(oe),
         se = a(22),
         ie = a.n(se),
-        ue = function(e) {
+        ue = function (e) {
           C.a.defaults.headers.common.secret_token = "".concat(
             localStorage.getItem("JWtToken")
           );
@@ -3765,7 +3728,7 @@
                           "button",
                           {
                             type: "button",
-                            onClick: function() {
+                            onClick: function () {
                               o(!c);
                             },
                             className: "btn btn-danger btn-small",
@@ -4164,7 +4127,7 @@
                     {
                       type: "submit",
                       className: "btn btn-danger ml-3",
-                      onClick: function() {
+                      onClick: function () {
                         null != e.userId &&
                           "edit" === e.userId.action &&
                           (t.handleAppView("users"), t.handleContent(null));
@@ -4177,7 +4140,7 @@
             )
           );
         },
-        de = function() {
+        de = function () {
           var e = Object(l.useContext)(N),
             t = Object(l.useState)(""),
             a = Object(m.a)(t, 2),
@@ -4229,31 +4192,27 @@
             ee = Object(m.a)($, 2),
             te = ee[0];
           ee[1];
-          Object(l.useEffect)(function() {
-            !(function() {
+          Object(l.useEffect)(function () {
+            !(function () {
               var e = Object(p.a)(
                 d.a.mark(function e() {
                   var t, a;
                   return d.a.wrap(
-                    function(e) {
+                    function (e) {
                       for (;;)
                         switch ((e.prev = e.next)) {
                           case 0:
                             return (
                               (e.prev = 0),
                               (e.next = 3),
-                              fetch(
-                                "https://deaksappbe.herokuapp.com/hotelList",
-                                {
-                                  method: "GET",
-                                  headers: {
-                                    "Content-Type": "application/json",
-                                    secret_token: localStorage.getItem(
-                                      "JWtToken"
-                                    ),
-                                  },
-                                }
-                              )
+                              fetch("http://localhost:5002/hotelList", {
+                                method: "GET",
+                                headers: {
+                                  "Content-Type": "application/json",
+                                  secret_token:
+                                    localStorage.getItem("JWtToken"),
+                                },
+                              })
                             );
                           case 3:
                             if ((t = e.sent).ok) {
@@ -4279,16 +4238,16 @@
                   );
                 })
               );
-              return function() {
+              return function () {
                 return e.apply(this, arguments);
               };
             })()();
           }, []);
-          var ae = (function() {
+          var ae = (function () {
             var t = Object(p.a)(
               d.a.mark(function t(a) {
                 var l, r, c;
-                return d.a.wrap(function(t) {
+                return d.a.wrap(function (t) {
                   for (;;)
                     switch ((t.prev = t.next)) {
                       case 0:
@@ -4307,18 +4266,18 @@
                             youtubeLink: U,
                           }),
                           (r = new FormData()),
-                          Object.keys(n).map(function(e, t) {
+                          Object.keys(n).map(function (e, t) {
                             r.append("outletImages", n[e]);
                           }),
-                          Object.keys(i).map(function(e, t) {
+                          Object.keys(i).map(function (e, t) {
                             r.append("groomingImages", i[e]);
                           }),
-                          Object.keys(b).map(function(e, t) {
+                          Object.keys(b).map(function (e, t) {
                             r.append("howToImages", b[e]);
                           }),
                           r.append("state", JSON.stringify(l)),
                           (t.next = 11),
-                          fetch("https://deaksappbe.herokuapp.com/outletList", {
+                          fetch("http://localhost:5002/outletList", {
                             method: "POST",
                             body: r,
                             headers: {
@@ -4337,7 +4296,7 @@
                 }, t);
               })
             );
-            return function(e) {
+            return function (e) {
               return t.apply(this, arguments);
             };
           })();
@@ -4394,7 +4353,7 @@
                           type: "text",
                           className: "form-control ",
                           placeholder: "Eg. Banquet..",
-                          onChange: function(e) {
+                          onChange: function (e) {
                             T(e.target.value);
                           },
                           required: !0,
@@ -4414,14 +4373,14 @@
                             name: "hotelDetails",
                             id: "hotelname",
                             className: "form-control",
-                            onChange: function(e) {
+                            onChange: function (e) {
                               G(e.target.value);
                             },
                             required: !0,
                           },
                           " ",
                           r.a.createElement("option", null),
-                          Q.map(function(e) {
+                          Q.map(function (e) {
                             return r.a.createElement(
                               "option",
                               { key: e._id, value: e._id },
@@ -4444,7 +4403,7 @@
                             type: "text",
                             className: "form-control ",
                             placeholder: "Billing Address",
-                            onChange: function(e) {
+                            onChange: function (e) {
                               Z(e.target.value);
                             },
                             required: !0,
@@ -4468,7 +4427,7 @@
                               type: "Number",
                               className: "form-control ",
                               placeholder: "Contact Number",
-                              onChange: function(e) {
+                              onChange: function (e) {
                                 R(e.target.value);
                               },
                               value: J,
@@ -4481,7 +4440,7 @@
                               type: "Number",
                               className: "form-control ",
                               placeholder: "Youtube Link ",
-                              onChange: function(e) {
+                              onChange: function (e) {
                                 W(e.target.value);
                               },
                               value: U,
@@ -4506,7 +4465,7 @@
                             rows: 5,
                             className: "form-control ",
                             placeholder: "Eg. Banquet..",
-                            onChange: function(e) {
+                            onChange: function (e) {
                               S(e.target.value);
                             },
                             value: w,
@@ -4531,7 +4490,7 @@
                             rows: 5,
                             className: "form-control ",
                             placeholder: "Eg. Banquet..",
-                            onChange: function(e) {
+                            onChange: function (e) {
                               _(e.target.value);
                             },
                             value: O,
@@ -4550,14 +4509,14 @@
                         ),
                         r.a.createElement("input", {
                           type: "file",
-                          onChange: function(e) {
+                          onChange: function (e) {
                             c(e.target.files);
                             var t = document.getElementById("previewImages");
-                            Array.from(e.target.files).forEach(function(e) {
+                            Array.from(e.target.files).forEach(function (e) {
                               for (var a = new FileReader(); t.firstChild; )
                                 t.removeChild(t.firstChild);
                               a.abort(),
-                                (a.onload = function() {
+                                (a.onload = function () {
                                   var e = new Image();
                                   (e.src = String(a.result)),
                                     e.classList.add(
@@ -4591,14 +4550,14 @@
                         ),
                         r.a.createElement("input", {
                           type: "file",
-                          onChange: function(e) {
+                          onChange: function (e) {
                             u(e.target.files);
                             var t = document.getElementById("previewGrooming");
-                            Array.from(e.target.files).forEach(function(e) {
+                            Array.from(e.target.files).forEach(function (e) {
                               for (var a = new FileReader(); t.firstChild; )
                                 t.removeChild(t.firstChild);
                               a.abort(),
-                                (a.onload = function() {
+                                (a.onload = function () {
                                   var e = new Image();
                                   (e.src = String(a.result)),
                                     e.classList.add(
@@ -4632,14 +4591,14 @@
                         ),
                         r.a.createElement("input", {
                           type: "file",
-                          onChange: function(e) {
+                          onChange: function (e) {
                             h(e.target.files);
                             var t = document.getElementById("previewHowTo");
-                            Array.from(e.target.files).forEach(function(e) {
+                            Array.from(e.target.files).forEach(function (e) {
                               for (var a = new FileReader(); t.firstChild; )
                                 t.removeChild(t.firstChild);
                               a.abort(),
-                                (a.onload = function() {
+                                (a.onload = function () {
                                   var e = new Image();
                                   (e.src = String(a.result)),
                                     e.classList.add(
@@ -4671,7 +4630,7 @@
                           "button",
                           {
                             type: "button",
-                            onClick: function() {
+                            onClick: function () {
                               e.handleAppView("clients"), e.handleContent(null);
                             },
                             className: "btn btn-secondary mx-1",
@@ -4691,7 +4650,7 @@
             )
           );
         },
-        pe = function(e) {
+        pe = function (e) {
           var t = Object(l.useContext)(N),
             a = Object(l.useState)([]),
             n = Object(m.a)(a, 2),
@@ -4700,16 +4659,16 @@
             s = Object(m.a)(o, 2),
             i = s[0];
           s[1];
-          Object(l.useEffect)(function() {
-            C()("https://deaksappbe.herokuapp.com/users")
-              .then(function(e) {})
-              .then(function() {});
+          Object(l.useEffect)(function () {
+            C()("http://localhost:5002/users")
+              .then(function (e) {})
+              .then(function () {});
           }, []);
-          var u = function(a) {
-            var n = c.filter(function(e) {
+          var u = function (a) {
+            var n = c.filter(function (e) {
                 return e._id == a.target.value;
               }),
-              l = i.filter(function(e) {
+              l = i.filter(function (e) {
                 return e._id == n[0].userId;
               });
             e.verifyUser({ form: n[0], user: l[0] }),
@@ -4719,10 +4678,10 @@
             (C.a.defaults.headers.common.secret_token = "".concat(
               localStorage.getItem("JWtToken")
             )),
-            Object(l.useEffect)(function() {
-              C()("https://deaksappbe.herokuapp.com/submit")
-                .then(function(e) {})
-                .then(function() {});
+            Object(l.useEffect)(function () {
+              C()("http://localhost:5002/submit")
+                .then(function (e) {})
+                .then(function () {});
             }, []),
             r.a.createElement(
               r.a.Fragment,
@@ -4749,7 +4708,7 @@
                   r.a.createElement(
                     "tbody",
                     null,
-                    c.map(function(e) {
+                    c.map(function (e) {
                       return r.a.createElement(
                         "tr",
                         { key: e._id },
@@ -4787,7 +4746,7 @@
         fe = a.n(Ee),
         be = a(40),
         he = a.n(be),
-        ve = function() {
+        ve = function () {
           return r.a.createElement(
             r.a.Fragment,
             null,
@@ -5059,7 +5018,7 @@
             )
           );
         },
-        Ne = function(e) {
+        Ne = function (e) {
           return r.a.createElement(
             r.a.Fragment,
             null,
@@ -5132,7 +5091,7 @@
                   r.a.createElement("hr", null)
                 ),
                 r.a.createElement(pe, {
-                  verifyUser: function(t) {
+                  verifyUser: function (t) {
                     e.verifyUser(t);
                   },
                 })
@@ -5143,8 +5102,8 @@
         ge = (a(145), a(1)),
         we =
           (a(147),
-          function() {
-            var e = function(e) {
+          function () {
+            var e = function (e) {
                 alert(e);
               },
               t = Object(l.useState)(""),
@@ -5169,17 +5128,14 @@
                   r.a.createElement(
                     "form",
                     {
-                      onSubmit: function(t) {
+                      onSubmit: function (t) {
                         t.preventDefault(),
                           C.a
-                            .post(
-                              "https://deaksappbe.herokuapp.com/userLogin",
-                              {
-                                email: c,
-                                password: u,
-                              }
-                            )
-                            .then(function(t) {
+                            .post("http://localhost:5002/userLogin", {
+                              email: c,
+                              password: u,
+                            })
+                            .then(function (t) {
                               localStorage.setItem("JWtToken", t.data.token),
                                 localStorage.setItem(
                                   "roles",
@@ -5192,7 +5148,7 @@
                                 p("/home"),
                                 e("User signin successful");
                             })
-                            .catch(function(t) {
+                            .catch(function (t) {
                               e("User signin failed");
                             });
                       },
@@ -5218,7 +5174,7 @@
                       r.a.createElement("input", {
                         type: "text",
                         value: c,
-                        onChange: function(e) {
+                        onChange: function (e) {
                           o(e.target.value);
                         },
                         className: "form-control",
@@ -5236,7 +5192,7 @@
                       ),
                       r.a.createElement("input", {
                         type: "password",
-                        onChange: function(e) {
+                        onChange: function (e) {
                           d(e.target.value);
                         },
                         className: "form-control",
@@ -5264,7 +5220,7 @@
               )
             );
           }),
-        Se = function(e) {
+        Se = function (e) {
           var t = e.form.form,
             a = e.form.user;
           C.a.defaults.headers.common.secret_token = "".concat(
@@ -5356,7 +5312,7 @@
             r.a.createElement(
               "form",
               {
-                onSubmit: function(e) {
+                onSubmit: function (e) {
                   e.preventDefault();
                   var a = {
                     userId: t.userId,
@@ -5386,10 +5342,10 @@
                     verificationStatus: be,
                   };
                   C.a
-                    .patch("https://deaksappbe.herokuapp.com/users", {
+                    .patch("http://localhost:5002/users", {
                       verifiedUser: a,
                     })
-                    .then(function(e) {});
+                    .then(function (e) {});
                 },
               },
               r.a.createElement(
@@ -5420,7 +5376,7 @@
                           "button",
                           {
                             type: "button",
-                            onClick: function() {
+                            onClick: function () {
                               i(!s);
                             },
                             className: "btn btn-danger btn-small",
@@ -5844,7 +5800,7 @@
                         type: "email",
                         className: "form-control",
                         id: "inputEmail4",
-                        onChange: function(e) {
+                        onChange: function (e) {
                           Fe(e.target.value);
                         },
                         disabled: s,
@@ -5863,7 +5819,7 @@
                         type: "email",
                         className: "form-control",
                         id: "inputEmail4",
-                        onChange: function(e) {
+                        onChange: function (e) {
                           he(e.target.value);
                         },
                         disabled: s,
@@ -5897,7 +5853,7 @@
                     {
                       type: "submit",
                       className: "btn btn-danger ml-3",
-                      onClick: function() {
+                      onClick: function () {
                         null != e.userId &&
                           "edit" === e.userId.action &&
                           (n.handleAppView("notifications"),
@@ -5911,7 +5867,7 @@
             )
           );
         },
-        ye = function(e) {
+        ye = function (e) {
           var t = Object(l.useContext)(N),
             a = e.outlet.outlet,
             n = Object(l.useState)([]),
@@ -5973,31 +5929,27 @@
           C.a.defaults.headers.common.secret_token = "".concat(
             localStorage.getItem("JWtToken")
           );
-          Object(l.useEffect)(function() {
-            !(function() {
+          Object(l.useEffect)(function () {
+            !(function () {
               var e = Object(p.a)(
                 d.a.mark(function e() {
                   var t, a;
                   return d.a.wrap(
-                    function(e) {
+                    function (e) {
                       for (;;)
                         switch ((e.prev = e.next)) {
                           case 0:
                             return (
                               (e.prev = 0),
                               (e.next = 3),
-                              fetch(
-                                "https://deaksappbe.herokuapp.com/hotelList",
-                                {
-                                  method: "GET",
-                                  headers: {
-                                    "Content-Type": "application/json",
-                                    secret_token: localStorage.getItem(
-                                      "JWtToken"
-                                    ),
-                                  },
-                                }
-                              )
+                              fetch("http://localhost:5002/hotelList", {
+                                method: "GET",
+                                headers: {
+                                  "Content-Type": "application/json",
+                                  secret_token:
+                                    localStorage.getItem("JWtToken"),
+                                },
+                              })
                             );
                           case 3:
                             if ((t = e.sent).ok) {
@@ -6023,15 +5975,15 @@
                   );
                 })
               );
-              return function() {
+              return function () {
                 return e.apply(this, arguments);
               };
             })()();
           }, []),
             Object(l.useState)(
-              function() {
+              function () {
                 var e;
-                (e = ie.filter(function(e) {
+                (e = ie.filter(function (e) {
                   return e._id == a.hoteldetails;
                 })),
                   z(e);
@@ -6039,19 +5991,19 @@
               [ie]
             ),
             null != e.outlet.outlet &&
-              Object(l.useEffect)(function() {
-                !(function() {
+              Object(l.useEffect)(function () {
+                !(function () {
                   var t = Object(p.a)(
                     d.a.mark(function t() {
-                      return d.a.wrap(function(t) {
+                      return d.a.wrap(function (t) {
                         for (;;)
                           switch ((t.prev = t.next)) {
                             case 0:
                               C()(
-                                "https://deaksappbe.herokuapp.com/groupList/".concat(
+                                "http://localhost:5002/groupList/".concat(
                                   e.outlet.outlet._id
                                 )
-                              ).then(function(e) {
+                              ).then(function (e) {
                                 fe(e.data);
                               });
                             case 1:
@@ -6061,49 +6013,43 @@
                       }, t);
                     })
                   );
-                  return function() {
+                  return function () {
                     return t.apply(this, arguments);
                   };
                 })()();
               }, []);
-          Object(l.useEffect)(function() {
-            e.outlet.outlet.outletImages.map(function(e) {
+          Object(l.useEffect)(function () {
+            e.outlet.outlet.outletImages.map(function (e) {
               var t = document.getElementById("previewImages"),
                 a = new Image();
-              (a.src = String(
-                "https://deaksappbe.herokuapp.com/images/".concat(e)
-              )),
+              (a.src = String("http://localhost:5002/images/".concat(e))),
                 a.classList.add("".concat(me.a.previewImage)),
                 t.appendChild(a);
             });
           }, []);
-          Object(l.useEffect)(function() {
-            e.outlet.outlet.groomingImages.map(function(e) {
+          Object(l.useEffect)(function () {
+            e.outlet.outlet.groomingImages.map(function (e) {
               var t = document.getElementById("previewGrooming"),
                 a = new Image();
-              (a.src = String(
-                "https://deaksappbe.herokuapp.com/images/".concat(e)
-              )),
+              (a.src = String("http://localhost:5002/images/".concat(e))),
                 a.classList.add("".concat(me.a.previewImage)),
                 t.appendChild(a);
             });
           }, []);
-          Object(l.useEffect)(function() {
-            e.outlet.outlet.howToImages.map(function(e) {
+          Object(l.useEffect)(function () {
+            e.outlet.outlet.howToImages.map(function (e) {
               var t = document.getElementById("previewHowTo"),
                 a = new Image();
-              (a.src = String(
-                "https://deaksappbe.herokuapp.com/images/".concat(e)
-              )),
+              (a.src = String("http://localhost:5002/images/".concat(e))),
                 a.classList.add("".concat(me.a.previewImage)),
                 t.appendChild(a);
             });
           }, []);
-          var be = (function() {
+          var be = (function () {
               var a = Object(p.a)(
                 d.a.mark(function a(n) {
                   var l, r, c, m;
-                  return d.a.wrap(function(a) {
+                  return d.a.wrap(function (a) {
                     for (;;)
                       switch ((a.prev = a.next)) {
                         case 0:
@@ -6112,7 +6058,7 @@
                             t.handleAppView("clients"),
                             t.handleContent(null),
                             (l = []),
-                            A.map(function(e) {
+                            A.map(function (e) {
                               l.push(e._id);
                             }),
                             (r = {
@@ -6127,29 +6073,24 @@
                               youtubeLink: ee,
                             }),
                             (c = new FormData()),
-                            Object.keys(o).map(function(e, t) {
+                            Object.keys(o).map(function (e, t) {
                               c.append("outletImages", o[e]);
                             }),
-                            Object.keys(E).map(function(e, t) {
+                            Object.keys(E).map(function (e, t) {
                               c.append("groomingImages", E[e]);
                             }),
-                            Object.keys(v).map(function(e, t) {
+                            Object.keys(v).map(function (e, t) {
                               c.append("howToImages", v[e]);
                             }),
                             c.append("state", JSON.stringify(r)),
                             (a.next = 13),
-                            fetch(
-                              "https://deaksappbe.herokuapp.com/adminoutletList",
-                              {
-                                method: "PATCH",
-                                body: c,
-                                headers: {
-                                  secret_token: localStorage.getItem(
-                                    "JWtToken"
-                                  ),
-                                },
-                              }
-                            )
+                            fetch("http://localhost:5002/adminoutletList", {
+                              method: "PATCH",
+                              body: c,
+                              headers: {
+                                secret_token: localStorage.getItem("JWtToken"),
+                              },
+                            })
                           );
                         case 13:
                           return (m = a.sent), (a.next = 16), m;
@@ -6162,22 +6103,22 @@
                   }, a);
                 })
               );
-              return function(e) {
+              return function (e) {
                 return a.apply(this, arguments);
               };
             })(),
-            he = (function() {
+            he = (function () {
               var t = Object(p.a)(
                 d.a.mark(function t() {
-                  return d.a.wrap(function(t) {
+                  return d.a.wrap(function (t) {
                     for (;;)
                       switch ((t.prev = t.next)) {
                         case 0:
                           C()(
-                            "https://deaksappbe.herokuapp.com/groupList/".concat(
+                            "http://localhost:5002/groupList/".concat(
                               e.outlet.outlet._id
                             )
-                          ).then(function(e) {
+                          ).then(function (e) {
                             fe(e.data);
                           });
                         case 1:
@@ -6187,15 +6128,15 @@
                   }, t);
                 })
               );
-              return function() {
+              return function () {
                 return t.apply(this, arguments);
               };
             })();
           Object(l.useEffect)(
-            function() {
+            function () {
               var e = [];
-              Ee.map(function(t) {
-                a.userGroups.map(function(a) {
+              Ee.map(function (t) {
+                a.userGroups.map(function (a) {
                   t._id == a && e.push(t);
                 });
               }),
@@ -6317,7 +6258,7 @@
                           type: "text",
                           className: "form-control ",
                           placeholder: "Eg. Banquet..",
-                          onChange: function(e) {
+                          onChange: function (e) {
                             V(e.target.value);
                           },
                           required: !0,
@@ -6338,13 +6279,13 @@
                             name: "hotelDetails",
                             id: "hotelname",
                             className: "form-control",
-                            onChange: function(e) {
+                            onChange: function (e) {
                               U(e.target.value);
                             },
                             required: !0,
                           },
                           " ",
-                          M.map(function(e) {
+                          M.map(function (e) {
                             return r.a.createElement(
                               "option",
                               { selected: !0, key: e._id, value: e._id },
@@ -6367,7 +6308,7 @@
                             type: "text",
                             className: "form-control ",
                             placeholder: "Billing Address",
-                            onChange: function(e) {
+                            onChange: function (e) {
                               re(e.target.value);
                             },
                             value: le,
@@ -6392,7 +6333,7 @@
                               type: "text",
                               className: "form-control ",
                               placeholder: "Contact Number",
-                              onChange: function(e) {
+                              onChange: function (e) {
                                 Q(e.target.value);
                               },
                               value: Y,
@@ -6405,7 +6346,7 @@
                               type: "text  ",
                               className: "form-control ",
                               placeholder: "Youtube Link ",
-                              onChange: function(e) {
+                              onChange: function (e) {
                                 te(e.target.value);
                               },
                               value: ee,
@@ -6430,7 +6371,7 @@
                             rows: 5,
                             className: "form-control ",
                             placeholder: "Eg. Banquet..",
-                            onChange: function(e) {
+                            onChange: function (e) {
                               j(e.target.value);
                             },
                             value: y,
@@ -6455,7 +6396,7 @@
                             rows: 5,
                             className: "form-control ",
                             placeholder: "Eg. Banquet..",
-                            onChange: function(e) {
+                            onChange: function (e) {
                               F(e.target.value);
                             },
                             value: x,
@@ -6484,10 +6425,10 @@
                               .concat(me.a.ighlightOption),
                             options: Ee,
                             selectedValues: A,
-                            onSelect: function(e) {
+                            onSelect: function (e) {
                               L(e);
                             },
-                            onRemove: function(e) {
+                            onRemove: function (e) {
                               L(e);
                             },
                             displayValue: "groupTitle",
@@ -6504,14 +6445,14 @@
                         ),
                         r.a.createElement("input", {
                           type: "file",
-                          onChange: function(e) {
+                          onChange: function (e) {
                             s(e.target.files);
                             var t = document.getElementById("previewImages");
-                            Array.from(e.target.files).forEach(function(e) {
+                            Array.from(e.target.files).forEach(function (e) {
                               for (var a = new FileReader(); t.firstChild; )
                                 t.removeChild(t.firstChild);
                               a.abort(),
-                                (a.onload = function() {
+                                (a.onload = function () {
                                   var e = new Image();
                                   (e.src = String(a.result)),
                                     e.classList.add(
@@ -6544,14 +6485,14 @@
                         ),
                         r.a.createElement("input", {
                           type: "file",
-                          onChange: function(e) {
+                          onChange: function (e) {
                             f(e.target.files);
                             var t = document.getElementById("previewGrooming");
-                            Array.from(e.target.files).forEach(function(e) {
+                            Array.from(e.target.files).forEach(function (e) {
                               for (var a = new FileReader(); t.firstChild; )
                                 t.removeChild(t.firstChild);
                               a.abort(),
-                                (a.onload = function() {
+                                (a.onload = function () {
                                   var e = new Image();
                                   (e.src = String(a.result)),
                                     e.classList.add(
@@ -6584,14 +6525,14 @@
                         ),
                         r.a.createElement("input", {
                           type: "file",
-                          onChange: function(e) {
+                          onChange: function (e) {
                             g(e.target.files);
                             var t = document.getElementById("previewHowTo");
-                            Array.from(e.target.files).forEach(function(e) {
+                            Array.from(e.target.files).forEach(function (e) {
                               for (var a = new FileReader(); t.firstChild; )
                                 t.removeChild(t.firstChild);
                               a.abort(),
-                                (a.onload = function() {
+                                (a.onload = function () {
                                   var e = new Image();
                                   (e.src = String(a.result)),
                                     e.classList.add(
@@ -6623,7 +6564,7 @@
                           "button",
                           {
                             type: "button",
-                            onClick: function() {
+                            onClick: function () {
                               t.handleAppView("clients"), t.handleContent(null);
                             },
                             className: "btn btn-secondary mx-1",
@@ -6643,7 +6584,7 @@
             )
           );
         },
-        je = function() {
+        je = function () {
           var e = Object(l.useContext)(N),
             t = Object(l.useState)({}),
             a = Object(m.a)(t, 2),
@@ -6658,7 +6599,7 @@
             E = p[0],
             f = p[1],
             b = Object(ge.g)();
-          Object(l.useEffect)(function() {
+          Object(l.useEffect)(function () {
             e.handleAppView("users"), e.handleContent(null);
           }, []);
           return r.a.createElement(
@@ -6702,7 +6643,7 @@
                     {
                       className: "nav-link",
                       href: "#",
-                      onClick: function() {
+                      onClick: function () {
                         e.handleAppView("notifications"), e.handleContent(null);
                       },
                     },
@@ -6733,7 +6674,7 @@
                     {
                       className: "nav-link ml-3",
                       href: "#",
-                      onClick: function() {
+                      onClick: function () {
                         localStorage.removeItem("JWtToken"), b("/login");
                       },
                     },
@@ -6760,7 +6701,7 @@
                     {
                       href: "#",
                       defaultValue: "users",
-                      onClick: function() {
+                      onClick: function () {
                         e.handleAppView("users"), e.handleContent(null);
                       },
                     },
@@ -6789,7 +6730,7 @@
                     "a",
                     {
                       href: " #",
-                      onClick: function() {
+                      onClick: function () {
                         e.handleAppView("clients"), e.handleContent(null);
                       },
                     },
@@ -6819,7 +6760,7 @@
                     "a",
                     {
                       href: "#",
-                      onClick: function() {
+                      onClick: function () {
                         e.handleAppView("slots"), e.handleContent(null);
                       },
                     },
@@ -6844,17 +6785,17 @@
             "new-slot-form" === e.viewState && r.a.createElement(T, null),
             "clients" === e.viewState &&
               r.a.createElement(K, {
-                editOutlet: function(e) {
+                editOutlet: function (e) {
                   u(e);
                 },
-                fetchGroups: function() {},
+                fetchGroups: function () {},
               }),
             "new-outlet-form" === e.viewState && r.a.createElement(de, null),
             "edit-outlet-form" === e.viewState &&
               r.a.createElement(ye, { outlet: i }),
             "users" === e.viewState &&
               r.a.createElement(le, {
-                editUser: function(e) {
+                editUser: function (e) {
                   c(e);
                 },
               }),
@@ -6862,7 +6803,7 @@
               r.a.createElement(ue, { userId: n, formId: E }),
             "notifications" === e.viewState &&
               r.a.createElement(Ne, {
-                verifyUser: function(e) {
+                verifyUser: function (e) {
                   f(e);
                 },
               }),
@@ -6870,7 +6811,7 @@
               r.a.createElement(Se, { form: E })
           );
         };
-      var Oe = function() {
+      var Oe = function () {
         return (
           Object(l.useContext)(N),
           r.a.createElement(
@@ -6927,14 +6868,14 @@
         document.getElementById("root")
       );
     },
-    48: function(e, t, a) {
+    48: function (e, t, a) {
       e.exports = { panel: "Slots_panel__2jzeW" };
     },
-    49: function(e, t, a) {
+    49: function (e, t, a) {
       e.exports = { panel: "Notifications_panel__2SdaZ" };
     },
-    51: function(e, t, a) {},
-    6: function(e, t, a) {
+    51: function (e, t, a) {},
+    6: function (e, t, a) {
       e.exports = {
         modal_lg: "NewOutletForm_modal_lg__Hb7r7",
         next: "NewOutletForm_next__2SfoA",
@@ -6944,7 +6885,7 @@
         footer: "NewOutletForm_footer__ouXQ_",
       };
     },
-    8: function(e, t, a) {
+    8: function (e, t, a) {
       e.exports = {
         multiselectContainer: "NewGroupForm_multiselectContainer__1srQG",
         modal_lg: "NewGroupForm_modal_lg__3AWIa",
@@ -6958,15 +6899,15 @@
         NGFTime: "NewGroupForm_NGFTime__3h9lQ",
       };
     },
-    83: function(e, t, a) {
+    83: function (e, t, a) {
       e.exports = { card: "Console_card__z_aCz" };
     },
-    84: function(e, t, a) {},
-    85: function(e, t, a) {},
-    86: function(e, t, a) {
+    84: function (e, t, a) {},
+    85: function (e, t, a) {},
+    86: function (e, t, a) {
       e.exports = a(413);
     },
-    9: function(e, t, a) {
+    9: function (e, t, a) {
       e.exports = {
         panel: "NewSlotForm_panel__22iOw",
         formStyle: "NewSlotForm_formStyle__3pXHg",
@@ -6983,7 +6924,7 @@
         highlightOption: "NewSlotForm_highlightOption__2exkj",
       };
     },
-    99: function(e, t, a) {
+    99: function (e, t, a) {
       e.exports = { panel: "SlotStack_panel__3dcoH" };
     },
   },

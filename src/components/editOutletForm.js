@@ -58,7 +58,7 @@ const EditOutletForm = (props) => {
   // useEffect(() => {
   //   const getData = async () => {
   //     try {
-  //       const response = await fetch("https://deaksappbe.herokuapp.com/hotelList", {
+  //       const response = await fetch("http://localhost:5002/hotelList", {
   //         method: "GET",
   //         headers: {
   //           "Content-Type": "application/json",
@@ -92,7 +92,7 @@ const EditOutletForm = (props) => {
     useEffect(() => {
       const fetch = async () => {
         axios(
-          `https://deaksappbe.herokuapp.com/groupList/${props.outlet.outlet._id}`
+          `http://localhost:5002/groupList/${props.outlet.outlet._id}`
         ).then((resp) => {
           setGroups(resp.data);
 
@@ -144,7 +144,7 @@ const EditOutletForm = (props) => {
     props.outlet.outlet.outletImages.map((imageId) => {
       const preview = document.getElementById("previewImages");
       var image = new Image();
-      image.src = String(`https://deaksappbe.herokuapp.com/images/${imageId}`);
+      image.src = String(`http://localhost:5002/images/${imageId}`);
       //console.log(image.src, "....imgSrc");
       image.classList.add(`${styles.previewImage}`);
       preview.appendChild(image);
@@ -176,7 +176,7 @@ const EditOutletForm = (props) => {
     props.outlet.outlet.groomingImages.map((imageId) => {
       const preview = document.getElementById("previewGrooming");
       var image = new Image();
-      image.src = String(`https://deaksappbe.herokuapp.com/images/${imageId}`);
+      image.src = String(`http://localhost:5002/images/${imageId}`);
       //console.log(image.src, "....imgSrc");
       image.classList.add(`${styles.previewImage}`);
       preview.appendChild(image);
@@ -207,7 +207,7 @@ const EditOutletForm = (props) => {
     props.outlet.outlet.howToImages.map((imageId) => {
       const preview = document.getElementById("previewHowTo");
       var image = new Image();
-      image.src = String(`https://deaksappbe.herokuapp.com/images/${imageId}`);
+      image.src = String(`http://localhost:5002/images/${imageId}`);
       //console.log(image.src, "....imgSrc");
       image.classList.add(`${styles.previewImage}`);
       preview.appendChild(image);
@@ -235,28 +235,25 @@ const EditOutletForm = (props) => {
       youtubeLink: youtubeLink,
     };
     const formData = new FormData();
-    Object.keys(file).map(function(key, index) {
+    Object.keys(file).map(function (key, index) {
       formData.append("outletImages", file[key]);
     });
-    Object.keys(groomingFiles).map(function(key, index) {
+    Object.keys(groomingFiles).map(function (key, index) {
       formData.append("groomingImages", groomingFiles[key]);
     });
-    Object.keys(howToFiles).map(function(key, index) {
+    Object.keys(howToFiles).map(function (key, index) {
       formData.append("howToImages", howToFiles[key]);
     });
     formData.append("state", JSON.stringify(outlet));
 
-    const response = await fetch(
-      "https://deaksappbe.herokuapp.com/adminoutletList",
-      {
-        method: "PATCH",
-        body: formData,
-        headers: {
-          // 'Content-Type': 'multipart/form-data',
-          secret_token: localStorage.getItem("JWtToken"),
-        },
-      }
-    );
+    const response = await fetch("http://localhost:5002/adminoutletList", {
+      method: "PATCH",
+      body: formData,
+      headers: {
+        // 'Content-Type': 'multipart/form-data',
+        secret_token: localStorage.getItem("JWtToken"),
+      },
+    });
     const ResponseData = await response;
   };
   const cancelForm = () => {
@@ -264,13 +261,13 @@ const EditOutletForm = (props) => {
     view.handleContent(null);
   };
   const fetchGroups = async () => {
-    axios(
-      `https://deaksappbe.herokuapp.com/groupList/${props.outlet.outlet._id}`
-    ).then((resp) => {
-      setGroups(resp.data);
+    axios(`http://localhost:5002/groupList/${props.outlet.outlet._id}`).then(
+      (resp) => {
+        setGroups(resp.data);
 
-      //console.log("resp", resp.data);
-    });
+        //console.log("resp", resp.data);
+      }
+    );
   };
   useEffect(() => {
     let selected = [];
@@ -485,7 +482,7 @@ const EditOutletForm = (props) => {
                 </div>
               </div>
               <div id="previewImages">
-                {/* <img src="https://deaksappbe.herokuapp.com/images/f6d30125640c6220ba3af9119dd724d2"></img> */}
+                {/* <img src="http://localhost:5002/images/f6d30125640c6220ba3af9119dd724d2"></img> */}
               </div>
 
               {/* <div>

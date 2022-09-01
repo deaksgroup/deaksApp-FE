@@ -11,16 +11,13 @@ const ClientStack = (props) => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch(
-          "https://deaksappbe.herokuapp.com/hotelList",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              secret_token: localStorage.getItem("JWtToken"),
-            },
-          }
-        );
+        const response = await fetch("http://localhost:5002/hotelList", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            secret_token: localStorage.getItem("JWtToken"),
+          },
+        });
         if (!response.ok) {
           throw new Error("Something went wrong!");
         }

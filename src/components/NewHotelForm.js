@@ -61,7 +61,7 @@ const NewHotelFrom = (props) => {
       latitude: Latitude,
     };
     const formData = new FormData();
-    Object.keys(logoFile).map(function(key, index) {
+    Object.keys(logoFile).map(function (key, index) {
       formData.append("logo", logoFile[key]);
     });
     formData.append("state", JSON.stringify(hotelDetails));
@@ -78,10 +78,10 @@ const NewHotelFrom = (props) => {
     //     secret_token: localStorage.getItem("JWtToken"),
     //   },
 
-    //   url: "https://deaksappbe.herokuapp.com/hotelList",
+    //   url: "http://localhost:5002/hotelList",
     // }).then((res) => { //console.log(res);
     // });
-    const response = await fetch("https://deaksappbe.herokuapp.com/hotelList", {
+    const response = await fetch("http://localhost:5002/hotelList", {
       method: "POST",
       body: formData,
       headers: {

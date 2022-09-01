@@ -11,7 +11,7 @@ const Slots = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch("https://deaksappbe.herokuapp.com/users", {
+        const response = await fetch("http://localhost:5002/users", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

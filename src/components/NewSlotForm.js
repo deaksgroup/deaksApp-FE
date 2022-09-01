@@ -33,14 +33,14 @@ const NewSlotForm = () => {
   let value = 5;
   //console.log(startTime);
   useEffect(() => {
-    axios(`https://deaksappbe.herokuapp.com/groupList/all`).then((resp) => {
+    axios(`http://localhost:5002/groupList/all`).then((resp) => {
       setGroups(resp.data);
 
       //console.log("resp", resp.data);
     });
   }, []);
   useEffect(() => {
-    axios(`https://deaksappbe.herokuapp.com/users`).then((resp) => {
+    axios(`http://localhost:5002/users`).then((resp) => {
       setUsers(resp.data);
 
       //console.log("resp", resp.data);
@@ -51,16 +51,13 @@ const NewSlotForm = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch(
-          "https://deaksappbe.herokuapp.com/hotelList",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              secret_token: localStorage.getItem("JWtToken"),
-            },
-          }
-        );
+        const response = await fetch("http://localhost:5002/hotelList", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            secret_token: localStorage.getItem("JWtToken"),
+          },
+        });
         if (!response.ok) {
           throw new Error("Something went wrong!");
         }
@@ -90,9 +87,11 @@ const NewSlotForm = () => {
   };
   const startTimeHandler = (e) => {
     setStartTime(e.target.value);
+    console.log(startTime);
   };
   const endTimeHandler = (e) => {
     setEndTIme(e.target.value);
+    console.log(endTime);
   };
 
   const selectDate = (e) => {
@@ -101,10 +100,27 @@ const NewSlotForm = () => {
   const payChangeHandler = (e) => {
     setPayPerHour(e.target.value);
 
-    var hoursMinutes = startTime.split(/[.:]/);
-    var hours = parseInt(hoursMinutes[0], 10);
-    var minutes = hoursMinutes[1] ? parseInt(hoursMinutes[1], 10) : 0;
-    var time = hours + minutes / 60;
+    var pph = parseInt(e.target.value);
+    var ppm = pph / 60;
+    var STime = moment(startTime);
+    var ETime = moment(endTime);
+    // var duration = ETime.diff(STime, "minutes");
+    var minutes = parseInt(moment.duration(ETime.diff(STime)).as("minutes"));
+    console.log(STime);
+    console.log(ETime);
+    // console.log(duration, "...duration");
+    console.log(pph, "...payperhoure");
+    console.log(minutes, "....Total mintes");
+    console.log(ppm, "......payperminutes");
+    var tp = Math.abs(ppm * minutes);
+    console.log(tp, "......TotalPay");
+
+    setTotalPay(tp.toString());
+
+    // var hoursMinutes = startTime.split(/[.:]/);
+    // var hours = parseInt(hoursMinutes[0], 10);
+    // var minutes = hoursMinutes[1] ? parseInt(hoursMinutes[1], 10) : 0;
+    // var time = hours + minutes / 60;
     //console.log(time);
   };
   //console.log(outlet, ".outlet");
@@ -115,7 +131,7 @@ const NewSlotForm = () => {
     const getData = async () => {
       try {
         const response = await fetch(
-          `https://deaksappbe.herokuapp.com/adminoutletList/${hotel}`,
+          `http://localhost:5002/adminoutletList/${hotel}`,
           {
             method: "GET",
             headers: {
@@ -190,10 +206,10 @@ const NewSlotForm = () => {
       outletName: outlet.outletName,
       hotelName: hotelName[0].hotelName,
       outlet: outlet._id,
-      startTime: startTime,
+      startTime: moment(startTime, "YYYY-MM-DDTHH:mm").format("hh:mm A"),
       showGroups: groups,
       selectedUsers: sUsers,
-      endTime: endTime,
+      endTime: moment(endTime, "YYYY-MM-DDTHH:mm").format("hh:mm A"),
       reqVac: reqVacancies,
       relVac: releasingVacancies,
       payperhour: payPerHour,
@@ -208,12 +224,12 @@ const NewSlotForm = () => {
     //     // 'Content-Type': 'multipart/form-data',
     //     secret_token: localStorage.getItem("JWtToken"),
     //   },
-    //   url: "https://deaksappbe.herokuapp.com/slotList",
+    //   url: "http://localhost:5002/slotList",
     // }).then((res) => {
     //   //console.log(res, "token2");
     // });
     axios
-      .post(`https://deaksappbe.herokuapp.com/slotList`, slot)
+      .post(`http://localhost:5002/slotList`, slot)
       .then((resp) => {
         //console.lyog("resp", resp);
       })
@@ -343,18 +359,18 @@ const NewSlotForm = () => {
                 <label htmlFor="exampleFormControlTextarea1">Start Time</label>
                 <input
                   required
-                  type="time"
+                  type="datetime-local"
                   onChange={startTimeHandler}
-                  className={styles.NSFTime}
+                  className={`form-control ${styles.NSFTime}`}
                 ></input>
               </div>
               <div className="form-group col">
                 <label htmlFor="exampleFormControlTextarea1">End Time</label>
                 <input
                   required
-                  type="time"
+                  type="datetime-local"
                   onChange={endTimeHandler}
-                  className={styles.NSFTime}
+                  className={`form-control ${styles.NSFTime}`}
                 ></input>
               </div>
             </div>
@@ -424,7 +440,8 @@ const NewSlotForm = () => {
                   value={totalPay}
                   type="number"
                   className={styles.pay}
-                  onChange={totalpayHandler}
+
+                  // onChange={totalpayHandler}
                 ></input>
               </div>
             </div>

@@ -27,18 +27,18 @@ const LoginForm = () => {
     };
 
     axios
-      .post("https://deaksappbe.herokuapp.com/userLogin", {
+      .post("http://localhost:5002/userLogin", {
         email,
         password,
       })
-      .then(function(res) {
+      .then(function (res) {
         localStorage.setItem("JWtToken", res.data.token);
         localStorage.setItem("roles", res.data.user.roles);
         localStorage.setItem("email", res.data.user.email);
         navigate("/home");
         notify("User signin successful");
       })
-      .catch(function(error) {
+      .catch(function (error) {
         notify("User signin failed");
       });
   };

@@ -10,16 +10,13 @@ const SlotStack = (props) => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch(
-          "https://deaksappbe.herokuapp.com/slotList",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              secret_token: localStorage.getItem("JWtToken"),
-            },
-          }
-        );
+        const response = await fetch("http://localhost:5002/slotList", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            secret_token: localStorage.getItem("JWtToken"),
+          },
+        });
         if (!response.ok) {
           throw new Error("Something went wrong!");
         }
@@ -39,7 +36,7 @@ const SlotStack = (props) => {
   };
   const deleteSlot = async (e) => {
     const response = await fetch(
-      `https://deaksappbe.herokuapp.com/slotList/${e.target.value}`,
+      `http://localhost:5002/slotList/${e.target.value}`,
       {
         method: "DELETE",
 

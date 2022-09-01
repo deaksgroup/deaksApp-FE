@@ -98,7 +98,7 @@ const UserDetails = (props) => {
     };
 
     axios
-      .patch("https://deaksappbe.herokuapp.com/users", {
+      .patch("http://localhost:5002/users", {
         verifiedUser,
       })
       .then((resp) => {
