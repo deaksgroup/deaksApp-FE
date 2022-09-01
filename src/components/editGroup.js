@@ -14,7 +14,7 @@ const EditGroupForm = (props) => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch("http://localhost:5002/users", {
+        const response = await fetch("https://deaksappbe.herokuapp.com/users", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -94,7 +94,7 @@ const EditGroupForm = (props) => {
     });
 
     axios
-      .patch(`http://localhost:5002/groupList`, {
+      .patch(`https://deaksappbe.herokuapp.com/groupList`, {
         outletId: props.group.outletId,
         groupId: props.group._id,
         title: title,

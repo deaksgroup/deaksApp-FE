@@ -33,14 +33,14 @@ const NewSlotForm = () => {
   let value = 5;
   //console.log(startTime);
   useEffect(() => {
-    axios(`http://localhost:5002/groupList/all`).then((resp) => {
+    axios(`https://deaksappbe.herokuapp.com/groupList/all`).then((resp) => {
       setGroups(resp.data);
 
       //console.log("resp", resp.data);
     });
   }, []);
   useEffect(() => {
-    axios(`http://localhost:5002/users`).then((resp) => {
+    axios(`https://deaksappbe.herokuapp.com/users`).then((resp) => {
       setUsers(resp.data);
 
       //console.log("resp", resp.data);
@@ -51,13 +51,16 @@ const NewSlotForm = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch("http://localhost:5002/hotelList", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            secret_token: localStorage.getItem("JWtToken"),
-          },
-        });
+        const response = await fetch(
+          "https://deaksappbe.herokuapp.com/hotelList",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              secret_token: localStorage.getItem("JWtToken"),
+            },
+          }
+        );
         if (!response.ok) {
           throw new Error("Something went wrong!");
         }
@@ -131,7 +134,7 @@ const NewSlotForm = () => {
     const getData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5002/adminoutletList/${hotel}`,
+          `https://deaksappbe.herokuapp.com/adminoutletList/${hotel}`,
           {
             method: "GET",
             headers: {
@@ -224,12 +227,12 @@ const NewSlotForm = () => {
     //     // 'Content-Type': 'multipart/form-data',
     //     secret_token: localStorage.getItem("JWtToken"),
     //   },
-    //   url: "http://localhost:5002/slotList",
+    //   url: "https://deaksappbe.herokuapp.com/slotList",
     // }).then((res) => {
     //   //console.log(res, "token2");
     // });
     axios
-      .post(`http://localhost:5002/slotList`, slot)
+      .post(`https://deaksappbe.herokuapp.com/slotList`, slot)
       .then((resp) => {
         //console.lyog("resp", resp);
       })

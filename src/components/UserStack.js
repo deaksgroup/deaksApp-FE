@@ -11,7 +11,7 @@ const UserStack = (props) => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://localhost:5002/users", {
+        const response = await fetch("https://deaksappbe.herokuapp.com/users", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
