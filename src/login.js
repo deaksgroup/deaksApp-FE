@@ -3,14 +3,12 @@ import axios from "axios";
 import "./styles/login.css";
 
 import { useNavigate } from "react-router-dom";
-import { toBeRequired } from "@testing-library/jest-dom/dist/matchers";
+import { NotificationManager } from "react-notifications";
+
 const LoginForm = () => {
-  const notify = (message) => {
-    alert(message);
-  };
+  const navigation = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
 
   const emailChangeHandler = (event) => {
     setEmail(event.target.value);
@@ -21,25 +19,24 @@ const LoginForm = () => {
 
   const onLogin = (event) => {
     event.preventDefault();
-    const user = {
-      email,
-      password,
-    };
-
     axios
-      .post("https://deaksappbe.herokuapp.com/userLogin", {
+      .post(`${process.env.REACT_APP_BASE_URL}/userLogin`, {
         email,
         password,
       })
       .then(function(res) {
-        localStorage.setItem("JWtToken", res.data.token);
+        localStorage.setItem("Token", res.data.token);
         localStorage.setItem("roles", res.data.user.roles);
         localStorage.setItem("email", res.data.user.email);
-        navigate("/home");
-        notify("User signin successful");
+        NotificationManager.success("User logged in sucessfully", "Success");
+        navigation("/users");
       })
-      .catch(function(error) {
-        notify("User signin failed");
+      .catch((err) => {
+        console.log(err);
+        NotificationManager.error(
+          "Incorrect password or username",
+          "Login Failed"
+        );
       });
   };
 

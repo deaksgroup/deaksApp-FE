@@ -50,6 +50,15 @@
             font-size: 20px;
             border-radius: 40px;
             padding: 15px 0;
+            width: 140px;
+            text-align: center;
         }
     }
+}
+
+.form-floating {
+    display: flex;
+    flex-direction: column;
+
+    .label {}
 }

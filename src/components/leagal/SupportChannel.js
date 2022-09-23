@@ -15,7 +15,7 @@ const SupportChanel = () => {
             Find technical help and assistance for account registration matters
             and account matters.
             <br></br> Write to us @{" "}
-            <a target="_blank" href="mailto:deaks@deaksgroup.com">
+            <a target="_blank" href="mailto:deaks@deaksgroup.com"  rel="noopener noreferrer" >
               deaks@deaksgroup.com{" "}
             </a>
           </span>
@@ -27,7 +27,7 @@ const SupportChanel = () => {
             To know about your work and inquiries on your work scopes and job
             requirements
             <br></br> Write to us @{" "}
-            <a target="_blank" href="mailto:operations@deaksgroup.com">
+            <a target="_blank" href="mailto:operations@deaksgroup.com"  rel="noopener noreferrer"  >
               operations@deaksgroup.com{" "}
             </a>
           </span>
@@ -39,7 +39,7 @@ const SupportChanel = () => {
             To inquiry about your pay release , per hour pay and after work
             payments
             <br></br> Write to us @{" "}
-            <a target="_blank" href="mailto:finance@deaksgroup.com">
+            <a target="_blank" href="mailto:finance@deaksgroup.com"  rel="noopener noreferrer"  >
               finance@deaksgroup.com{" "}
             </a>
           </span>
@@ -53,7 +53,7 @@ const SupportChanel = () => {
               To speak with a Deaks app representative, please tell us about
               your needs and we’ll be in touch.
               <br></br> Write to us @{" "}
-              <a target="_blank" href="mailto:deaks@deaksgroup.com">
+              <a target="_blank" href="mailto:deaks@deaksgroup.com"  rel="noopener noreferrer"  >
                 deaks@deaksgroup.com
               </a>
             </span>
@@ -66,7 +66,7 @@ const SupportChanel = () => {
               To report vulnerabilities related to Deaks app , follow our
               reporting guidelines. For all other security issues, visit our
               help portal{" "}
-              <a target="_blank" href="link">
+              <a target="_blank" href="link"  rel="noopener noreferrer"  >
                 Link
               </a>
             </span>
@@ -77,7 +77,7 @@ const SupportChanel = () => {
             </h5>
             <span>
               As Deaks is part of the Salesforce family, the Deaks office is
-              located in the 132A casuarina Road , View our location on <a target="_blank" href="link">
+              located in the 132A casuarina Road , View our location on <a target="_blank" href="link"  rel="noopener noreferrer"  >
               Google Maps 
               </a>
             </span>
