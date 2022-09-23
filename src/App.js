@@ -16,9 +16,12 @@ import { Hotels } from "./components/hotels";
 function App() {
   return (
     <div>
+      <Routes>
+        <Route path="/login" element={<LoginForm />}></Route>
+      </Routes>
+
       <LeftMenuBar>
         <Routes>
-          <Route path="/login" element={<LoginForm />}></Route>
           <Route path={"/"} element={<Navigate replace to="/login" />}></Route>
           <Route path={"/users"} element={<Users />} />
           <Route path={"/hotels"} element={<Hotels />} />
