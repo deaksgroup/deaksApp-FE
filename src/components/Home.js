@@ -86,7 +86,7 @@ const Home = () => {
             <a className="nav-link" href="#">
               Settings
             </a> */}
-            <a className="nav-link" href="#" onClick={setNotificationsView}>
+            {/* <a className="nav-link" href="#" onClick={setNotificationsView}>
               <div className={`d-flex ${styles.notofication}`}>
                 <p className="m-0 p-0 ">Notifications</p>
                 <div
@@ -95,7 +95,7 @@ const Home = () => {
                   <p className={`${styles.notificationNumber}`}>1</p>
                 </div>
               </div>
-            </a>
+            </a> */}
             <a className="nav-link ml-3" href="#" onClick={logout}>
               Logout
             </a>

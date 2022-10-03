@@ -9,7 +9,7 @@ const GroupStack = (props) => {
   )}`;
   const deleteGroup = (e) => {
     axios
-      .delete(`https://deaksappbe.herokuapp.com/groupList/${e.target.value}`)
+      .delete(`http://localhost:5002/groupList/${e.target.value}`)
       .then((resp) => {
         //console.log("resp", resp);
       })
@@ -26,7 +26,7 @@ const GroupStack = (props) => {
               <th scope="col">#</th>
               <th scope="col">Name</th>
               <th scope="col">Members</th>
-              <th scope="col">Date</th>
+            
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -36,12 +36,13 @@ const GroupStack = (props) => {
                 <tr key={group._id}>
                   <th scope="row">1</th>
                   <td>{group.groupTitle}</td>
-                  <td>15</td>
-                  <td>12-2-2022</td>
+                  <td>{ group.groupMembers.length}</td>
+                 
                   <td>
                     <div className="d-flex align-items-center ">
                       <EditGroupForm group={group}></EditGroupForm>
                       <button
+                        disabled
                         className="btn btn-danger mx-2 btn-sm"
                         onClick={deleteGroup}
                         value={group._id}

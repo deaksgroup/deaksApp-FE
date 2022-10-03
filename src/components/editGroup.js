@@ -14,7 +14,7 @@ const EditGroupForm = (props) => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch("https://deaksappbe.herokuapp.com/users", {
+        const response = await fetch("http://localhost:5002/users", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -94,7 +94,7 @@ const EditGroupForm = (props) => {
     });
 
     axios
-      .patch(`https://deaksappbe.herokuapp.com/groupList`, {
+      .patch(`http://localhost:5002/groupList`, {
         outletId: props.group.outletId,
         groupId: props.group._id,
         title: title,
@@ -163,14 +163,14 @@ const EditGroupForm = (props) => {
               <div className="modal-body">
                 <div>
                   <div className="form-row mt-3">
-                    <div className="form-group col d-flex justify-content-center align-items-center">
+                    {/* <div className="form-group col d-flex justify-content-center align-items-center">
                       <label htmlFor="exampleFormControlTextarea1">Date</label>
                       <input type="date" className={styles.NGFDate}></input>
                     </div>
                     <div className="form-group d-flex justify-content-center align-items-center col">
                       <label htmlFor="exampleFormControlTextarea1">Time</label>
                       <input type="time" className={styles.NGFTime}></input>
-                    </div>
+                    </div> */}
                   </div>{" "}
                   <div className={`form-row ${styles.next}`}>
                     <div className="col">
@@ -203,7 +203,7 @@ const EditGroupForm = (props) => {
               </div>
               {Content}
               <div className="modal-footer">
-                <button type="button" className="btn btn-secondary">
+                <button type="button" data-dismiss="modal" className="btn btn-secondary">
                   Cancel
                 </button>
                 <button

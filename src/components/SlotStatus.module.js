@@ -69,8 +69,8 @@ const SlotStatus = (props) => {
                     className="modal-title"
                     id={`staticBackdropLabel${props.slots.Slot._id}`}
                   >
-                    {props.slots.Slot.hotelName} {props.slots.Slot.outletName} -
-                    ${props.slots.Slot._id}
+                    {props.slots.Slot.hotelName} {props.slots.Slot.outletName}
+          
                   </h3>
                   <button
                     type="button"
@@ -88,7 +88,7 @@ const SlotStatus = (props) => {
                         <label htmlFor="exampleFormControlTextarea1">
                           Select Date
                         </label>
-                        <input type="date" className={styles.SSDate}></input>
+                        <input disabled type="date" className={styles.SSDate} value={props.slots.Slot.timeStamp}></input>
                       </div>
                       <div className="form-group col">
                         <label htmlFor="exampleFormControlTextarea1">
@@ -98,61 +98,53 @@ const SlotStatus = (props) => {
                     </div>{" "}
                     <div className="form-row mt-1">
                       <div className="form-group col">
-                        <label htmlFor="inputState">Select Hotel</label>
-                        <select id="inputState" className="form-control">
-                          <option></option>
-                          <option value="CAR">Le Maridien</option>
-                          <option value="CAR">...</option>
+                        <label htmlFor="inputState">Hotel</label>
+                        <select disabled id="inputState" className="form-control">
+                          <option selected >{props.slots.Slot.hotelName}</option>
+                          
+                          
                         </select>
                       </div>
                       <div className="form-group col">
-                        <label htmlFor="inputState">Select Outlet</label>
-                        <select id="inputState" className="form-control">
-                          <option value="car">Choose...</option>
-                          <option value="car">...</option>
+                        <label htmlFor="inputState">Outlet</label>
+                        <select disabled id="inputState" className="form-control">
+                          <option value="car">{props.slots.Slot.outletName}</option>
+                        
                         </select>
                       </div>
                     </div>
-                    <div className="form-row mt-1">
-                      <div className="form-group col">
-                        <label htmlFor="exampleFormControlTextarea1">
-                          Job Description
-                        </label>
-                        <textarea
-                          className="form-control"
-                          id="exampleFormControlTextarea1"
-                          rows="3"
-                        ></textarea>
-                      </div>
-                    </div>
+                 
                     <div className="form-row mt-1">
                       <div className="form-group col">
                         <label htmlFor="exampleFormControlTextarea1">
                           Start Time
                         </label>
-                        <input type="time" className={styles.SSTime}></input>
+                        <input disabled type="text" className="form-control" value={props.slots.Slot.startTime}></input>
                       </div>
                       <div className="form-group col">
                         <label htmlFor="exampleFormControlTextarea1">
                           End Time
                         </label>
-                        <input type="time" className={styles.SSTime}></input>
+                        <input disabled type="text"className="form-control" value={props.slots.Slot.endTime}></input>
                       </div>
                     </div>
                     <div className="form-row mt-1">
                       <div className="form-group col">
                         <label>Requested Vacancies</label>
-                        <input type="number" className="form-control"></input>
+                        <input disabled type="number" value={props.slots.Slot.
+requestedVacancies} className="form-control"></input>
                       </div>
                       <div className="form-group col">
                         <label>Releasing Vacancies</label>
-                        <input type="number" className="form-control"></input>
+                        <input disabled type="number" value={props.slots.Slot.
+
+releasingVacancies} className="form-control"></input>
                       </div>
                     </div>
                     <div className="form-row mt-1">
                       <div className="form-group col">
                         <label htmlFor="inputState">Show Groups</label>
-                        <select id="inputState" className="form-control">
+                        <select disabled id="inputState" className="form-control">
                           <option defaultValue="all">All</option>
                           <option value="CAR">Group 1</option>
                           <option value="CAR">Group 2</option>
@@ -162,17 +154,17 @@ const SlotStatus = (props) => {
                     <div className="form-row mt-1">
                       <div className="form-group col">
                         <label htmlFor="inputState">Show Single User</label>
-                        <input type="text" className="form-control"></input>
+                        <input disabled type="text" className="form-control"></input>
                       </div>
                     </div>
                     <div className="form-row mt-1">
                       <div className="form-group col">
                         <label>Pay per hour</label>
-                        <input type="number" className={styles.pay}></input>
+                        <input disabled type="number" className={styles.pay} value={props.slots.Slot.payPerHour}></input>
                       </div>
                       <div className="form-group col">
                         <label>Total Pay</label>
-                        <input type="number" className={styles.pay}></input>
+                        <input disabled type="number" className={styles.pay} value={props.slots.Slot.totalPayForSlot}></input>
                       </div>
                     </div>
                   </div>
@@ -255,7 +247,7 @@ const SlotStatus = (props) => {
                       <input type="search" className={styles.SSSearch}></input>
                     </div>
                     <div className="form-group d-flex justify-content-center align-items-center col-3">
-                      <button className="btn btn-sm btn-danger">Add</button>
+                      <button disabled className="btn btn-sm btn-danger">Add</button>
                     </div>
                   </div>
                 </div>

@@ -11,11 +11,11 @@ const NewHotelFrom = (props) => {
     props.edit == "edit" ? props.hotel.SOAMail : ""
   );
   const [logoFile, setLogoFile] = useState(null);
-  const [Longitude, setLongitude] = useState(
-    props.edit == "edit" ? props.hotel.longitude : ""
+  const [googleMapLink,setGoogleMapLink] = useState(
+    props.edit == "edit" ? props.hotel.googleMapLink : ""
   );
-  const [Latitude, setLatitude] = useState(
-    props.edit == "edit" ? props.hotel.latitude : ""
+  const [appleMapLink,setAppleMapLink] = useState(
+    props.edit == "edit" ? props.hotel.ppleMapLink : ""
   );
   //console.log(props.edit, props.hotel);
   //console.log(name);
@@ -25,11 +25,11 @@ const NewHotelFrom = (props) => {
   const mailChangeHandler = (event) => {
     setMail(event.target.value);
   };
-  const latitudeChangeHandler = (event) => {
-    setLatitude(event.target.value);
+  const googleMapLinkChangeHandler = (event) => {
+    setGoogleMapLink(event.target.value);
   };
-  const longitudeChangeHandler = (event) => {
-    setLongitude(event.target.value);
+  const appleMapLinkChangeHandler = (event) => {
+    setAppleMapLink(event.target.value);
   };
   const fileSelected = (event) => {
     setLogoFile(event.target.files);
@@ -57,8 +57,8 @@ const NewHotelFrom = (props) => {
     const hotelDetails = {
       title: name,
       SOAmail: mail,
-      longitude: Longitude,
-      latitude: Latitude,
+      appleMapLink:appleMapLink,
+      googleMapLink:googleMapLink,
     };
     const formData = new FormData();
     Object.keys(logoFile).map(function(key, index) {
@@ -78,10 +78,10 @@ const NewHotelFrom = (props) => {
     //     secret_token: localStorage.getItem("JWtToken"),
     //   },
 
-    //   url: "https://deaksappbe.herokuapp.com/hotelList",
+    //   url: "http://localhost:5002/hotelList",
     // }).then((res) => { //console.log(res);
     // });
-    const response = await fetch("https://deaksappbe.herokuapp.com/hotelList", {
+    const response = await fetch("http://localhost:5002/hotelList", {
       method: "POST",
       body: formData,
       headers: {
@@ -91,7 +91,9 @@ const NewHotelFrom = (props) => {
     });
     const ResponseData = await response;
     await props.fetchClients();
-    // document.getElementById("staticBackdropHotel").modal("toggle");
+     document.getElementById("staticBackdropHotel").classList.remove("show", "d-block");
+    document.querySelectorAll(".modal-backdrop")
+            .forEach(el => el.classList.remove("modal-backdrop"));
     // $("#staticBackdropHotel").modal("toggle");
   };
 
@@ -177,21 +179,21 @@ const NewHotelFrom = (props) => {
                     <div className="col">
                       <input
                         required
-                        type="number"
+                        
                         className="form-control "
-                        placeholder="Longitude"
-                        value={Longitude}
-                        onChange={longitudeChangeHandler}
+                        placeholder="Google Map Link"
+                        value={googleMapLink}
+                        onChange={googleMapLinkChangeHandler}
                       ></input>
                     </div>
                     <div className="col">
                       <input
                         required
-                        type="number"
+                       
                         className="form-control"
-                        placeholder="Latitude"
-                        value={Latitude}
-                        onChange={latitudeChangeHandler}
+                        placeholder="Apple Map Link"
+                        value={appleMapLink}
+                        onChange={appleMapLinkChangeHandler}
                       ></input>
                     </div>
                   </div>

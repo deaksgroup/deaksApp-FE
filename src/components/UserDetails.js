@@ -65,6 +65,8 @@ const UserDetails = (props) => {
     setVerificationStatus(e.target.value);
   };
   const submitHandler = (e) => {
+
+    console.log("submiting");
     e.preventDefault();
     const verifiedUser = {
       userId: props.userId.user._id,
@@ -98,11 +100,11 @@ const UserDetails = (props) => {
     };
 
     axios
-      .patch("https://deaksappbe.herokuapp.com/users", {
+      .patch("http://localhost:5002/users", {
         verifiedUser,
       })
       .then((resp) => {
-        //console.log(resp.body);
+        view.handleAppView("users");
       });
   };
 
@@ -184,7 +186,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputEmail4">Contact Number</label>
                 <input
-                  type="email"
+                  type="number"
                   className="form-control"
                   id="inputEmail4"
                   value={contact}
@@ -256,7 +258,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputZip">Zip</label>
                 <input
-                  type="text"
+                  type="number"
                   className="form-control"
                   id="inputZip"
                   disabled={edit}
@@ -269,7 +271,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputEmail4">Sex</label>
                 <input
-                  type="email"
+                  
                   className="form-control"
                   id="inputEmail4"
                   // defaultValue="Male"
@@ -280,7 +282,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputEmail4">DOB</label>
                 <input
-                  type="email"
+                
                   className="form-control"
                   id="inputEmail4"
                   // defaultValue="Male"
@@ -294,7 +296,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputEmail4">Resident Status</label>
                 <input
-                  type="email"
+                  type="text"
                   className="form-control"
                   id="inputEmail4"
                   // defaultValue="Male"
@@ -305,7 +307,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputEmail4">Institute</label>
                 <input
-                  type="email"
+                  type="text"
                   className="form-control"
                   id="inputEmail4"
                   // defaultValue="Male"
@@ -316,7 +318,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputEmail4">ID</label>
                 <input
-                  type="email"
+                  type="text"
                   className="form-control"
                   id="inputEmail4"
                   // defaultValue="Male"
@@ -330,7 +332,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputEmail4">NRIC Number</label>
                 <input
-                  type="email"
+                  
                   className="form-control"
                   id="inputEmail4"
                   // defaultValue="General"
@@ -341,7 +343,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputEmail4">PayNow Number</label>
                 <input
-                  type="email"
+                  type="number"
                   className="form-control"
                   id="inputEmail4"
                   // defaultValue="Not Active"
@@ -354,7 +356,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputEmail4">Bank Name</label>
                 <input
-                  type="email"
+                  
                   className="form-control"
                   id="inputEmail4"
                   // defaultValue="General"
@@ -365,7 +367,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputEmail4">Bank Account Number</label>
                 <input
-                  type="email"
+                 
                   className="form-control"
                   id="inputEmail4"
                   // defaultValue="Not Active"
@@ -379,7 +381,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputEmail4">Emargency Contact Number</label>
                 <input
-                  type="email"
+                  type="number"
                   className="form-control"
                   id="inputEmail4"
                   // defaultValue="General"
@@ -390,7 +392,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputEmail4">Emargency Contact Name</label>
                 <input
-                  type="email"
+                  type="text"
                   className="form-control"
                   id="inputEmail4"
                   // defaultValue="Not Active"
@@ -403,7 +405,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputEmail4">Relation</label>
                 <input
-                  type="email"
+                  type="text"
                   className="form-control"
                   id="inputEmail4"
                   // defaultValue="General"
@@ -417,7 +419,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputEmail4">Account Status</label>
                 <input
-                  type="email"
+                  type="text"
                   className="form-control"
                   id="inputEmail4"
                   onChange={accountStatusHandler}
@@ -429,7 +431,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputEmail4">Verification Status</label>
                 <input
-                  type="email"
+                  type="text"
                   className="form-control"
                   id="inputEmail4"
                   onChange={verificationStatusHandler}
@@ -441,7 +443,7 @@ const UserDetails = (props) => {
               <div className="form-group col">
                 <label htmlFor="inputEmail4">Job Status</label>
                 <input
-                  type="email"
+                  type="text"
                   className="form-control"
                   id="inputEmail4"
                   // defaultValue={props.form.user.jobStatus}

@@ -11,7 +11,7 @@ const SlotStack = (props) => {
     const getData = async () => {
       try {
         const response = await fetch(
-          "https://deaksappbe.herokuapp.com/slotList",
+          "http://localhost:5002/adminSlotList",
           {
             method: "GET",
             headers: {
@@ -24,8 +24,8 @@ const SlotStack = (props) => {
           throw new Error("Something went wrong!");
         }
         const data = await response.json();
-        //console.log(data, "......");
-        setLoadedSlots(data);
+        console.log(data, "......");
+        setLoadedSlots(data["result"]);
       } catch (error) {
         //console.log(error.message);
       }
@@ -39,7 +39,7 @@ const SlotStack = (props) => {
   };
   const deleteSlot = async (e) => {
     const response = await fetch(
-      `https://deaksappbe.herokuapp.com/slotList/${e.target.value}`,
+      `http://localhost:5002/slotList/${e.target.value}`,
       {
         method: "DELETE",
 

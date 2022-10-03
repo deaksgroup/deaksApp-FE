@@ -69,7 +69,7 @@ const VeryfyUserDetails = (props) => {
   //   useEffect(() => {
   //     useEffect(() => {
   //       const fetch = () => {
-  //         axios(`https://deaksappbe.herokuapp.com/submit`)
+  //         axios(`http://localhost:5002/submit`)
   //           .then((resp) => {
   //             //console.log("resp", resp.data);
   //             setSubmissions(resp.data);
@@ -116,7 +116,7 @@ const VeryfyUserDetails = (props) => {
     };
 
     axios
-      .patch("https://deaksappbe.herokuapp.com/users", {
+      .patch("http://localhost:5002/users", {
         verifiedUser,
       })
       .then((resp) => {

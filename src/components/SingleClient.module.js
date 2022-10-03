@@ -20,7 +20,7 @@ const SingleClient = (props) => {
     const getData = async () => {
       try {
         const response = await fetch(
-          `https://deaksappbe.herokuapp.com/adminoutletList/${props.hotel._id}`,
+          `http://localhost:5002/adminoutletList/${props.hotel._id}`,
           {
             method: "GET",
             headers: {
@@ -46,7 +46,7 @@ const SingleClient = (props) => {
   };
   const deleteHotel = async (e) => {
     const response = await fetch(
-      `https://deaksappbe.herokuapp.com/hotelList/${e.target.value}`,
+      `http://localhost:5002/hotelList/${e.target.value}`,
       {
         method: "DELETE",
 
@@ -72,7 +72,7 @@ const SingleClient = (props) => {
   };
   const deleteOutlet = async (e) => {
     const response = await fetch(
-      `https://deaksappbe.herokuapp.com/adminoutletList/${e.target.value}`,
+      `http://localhost:5002/adminoutletList/${e.target.value}`,
       {
         method: "DELETE",
 
@@ -95,9 +95,10 @@ const SingleClient = (props) => {
             <h6>{props.hotel.SOAMail}</h6>
           </div>
           <div className="col-4 d-flex align-items-center ">
-            <EditHotel key={props.hotel._id} hotel={props.hotel}></EditHotel>
+            {/* <EditHotel key={props.hotel._id} hotel={props.hotel}></EditHotel> */}
             {/* <button onClick={navigateHandler} className="btn btn-sm btn-danger ml-2">Delete</button> */}
             <button
+              disabled
               className="btn btn-sm btn-danger ml-2"
               onClick={deleteHotel}
               value={props.hotel._id}
@@ -125,6 +126,7 @@ const SingleClient = (props) => {
                   <div className="col d-flex align-items-center">
                     <h6 className="p-3 ">{outlet.outletName}</h6>
                     <button
+                     
                       className={`btn btn-sm btn-danger ml-auto`}
                       value={outlet._id}
                       onClick={editOutlet}
@@ -132,6 +134,7 @@ const SingleClient = (props) => {
                       Edit
                     </button>
                     <button
+                      disabled
                       className="btn btn-sm btn-danger ml-2"
                       onClick={deleteOutlet}
                       value={outlet._id}

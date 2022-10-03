@@ -33,6 +33,7 @@ const MembersStack = (props) => {
                 <td>{user.contactNumber}</td>
                 <td>
                   <button
+                    disabled
                     className="btn btn-sm btn-danger mr-1"
                     onClick={deleteUser}
                     value={user._id}

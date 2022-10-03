@@ -11,7 +11,7 @@ const Slots = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch("https://deaksappbe.herokuapp.com/users", {
+        const response = await fetch("http://localhost:5002/users", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -65,7 +65,7 @@ const Slots = () => {
           </header>
           <div>
             <div className={`row justify-content-between align-items-center`}>
-              <div className="col-auto px-0">
+              {/* <div className="col-auto px-0">
                 <div className="row align-items-center mx-0">
                   <h5 className="col">Active Slots</h5>
                   <h3>2</h3>
@@ -73,7 +73,7 @@ const Slots = () => {
               </div>
               <div className="col-auto">
                 <input className="form-control" placeholder="search"></input>
-              </div>
+              </div> */}
             </div>
             <hr></hr>
             <SlotStack users={users}></SlotStack>

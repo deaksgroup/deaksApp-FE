@@ -7,14 +7,14 @@ import $ from "jquery";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const NewGroupForm = (props) => {
   const [selectedUsers, setSelectedUsers] = useState([]);
-  const [title, setTitle] = useState("as");
+  const [title, setTitle] = useState("");
   const [time, setTime] = useState("d");
   const [date, setDate] = useState("e");
   const [users, setUsers] = useState([]);
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch("https://deaksappbe.herokuapp.com/users", {
+        const response = await fetch("http://localhost:5002/users", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -79,7 +79,7 @@ const NewGroupForm = (props) => {
     });
 
     axios
-      .post(`https://deaksappbe.herokuapp.com/groupList`, {
+      .post(`http://localhost:5002/groupList`, {
         outletId: props.outlet.outlet._id,
         title: title,
         users: selected,
@@ -127,7 +127,7 @@ const NewGroupForm = (props) => {
                       className="modal-title"
                       id={`staticBackdropLabel${props.outlet.outlet._id}`}
                     >
-                      New Group <span className="display-4">5</span>
+                      New Group <span className="display-4"></span>
                       <span className="ml-5">
                         {props.outlet.outlet.outletName}
                       </span>
@@ -146,7 +146,7 @@ const NewGroupForm = (props) => {
               </div>
               <div className="modal-body">
                 <div>
-                  <div className="form-row mt-3">
+                  {/* <div className="form-row mt-3">
                     <div className="form-group col d-flex justify-content-center align-items-center">
                       <label htmlFor="exampleFormControlTextarea1">Date</label>
                       <input type="date" className={styles.NGFDate}></input>
@@ -155,11 +155,12 @@ const NewGroupForm = (props) => {
                       <label htmlFor="exampleFormControlTextarea1">Time</label>
                       <input type="time" className={styles.NGFTime}></input>
                     </div>
-                  </div>{" "}
+                  </div>{" "} */}
                   <div className={`form-row ${styles.next}`}>
                     <div className="col">
                       <label htmlFor="ourletname">Group Title</label>
                       <input
+                        required
                         id="outletname"
                         type="text"
                         className="form-control "
@@ -174,6 +175,7 @@ const NewGroupForm = (props) => {
                   <div className="form-group col">
                     <label htmlFor="inputState">Select Users</label>
                     <Multiselect
+                      required
                       className={`${styles.searchBox} ${styles.optionContainer} ${styles.option} ${styles.multiselectContainer} ${styles.ighlightOption}`}
                       options={users} // Options to display in the dropdown
                       selectedValues={selectedUsers} // Preselected value to persist in dropdown
