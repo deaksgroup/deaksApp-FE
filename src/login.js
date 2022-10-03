@@ -27,7 +27,7 @@ const LoginForm = () => {
     };
 
     axios
-      .post("https://deaksappbe.herokuapp.com/api/userLogin", {
+      .post("https://deaksappbe.herokuapp.com/api/adminLogin", {
         email,
         password,
       })
