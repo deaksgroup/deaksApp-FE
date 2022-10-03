@@ -54,7 +54,7 @@ const NewOutletForm = () => {
     const getData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5002/hotelList",
+          "https://deaksappbe.herokuapp.com/hotelList",
           {
             method: "GET",
             headers: {
@@ -80,7 +80,7 @@ const NewOutletForm = () => {
   //   useEffect(() => {
   //     const fetch = async () => {
   //       axios(
-  //         `http://localhost:5002/groupList/${props.outlet.outlet._id}`
+  //         `https://deaksappbe.herokuapp.com/groupList/${props.outlet.outlet._id}`
   //       ).then((resp) => {
   //         setGroups(resp.data);
 
@@ -197,7 +197,7 @@ const NewOutletForm = () => {
     formData.append("state", JSON.stringify(outlet));
 
     const response = await fetch(
-      "http://localhost:5002/outletList",
+      "https://deaksappbe.herokuapp.com/outletList",
       {
         method: "POST",
         body: formData,
@@ -214,7 +214,7 @@ const NewOutletForm = () => {
     view.handleContent(null);
   };
   // const fetchGroups = async () => {
-  //   axios(`http://localhost:5002/groupList/${props.outlet.outlet._id}`).then(
+  //   axios(`https://deaksappbe.herokuapp.com/groupList/${props.outlet.outlet._id}`).then(
   //     (resp) => {
   //       setGroups(resp.data);
 
@@ -403,7 +403,7 @@ const NewOutletForm = () => {
                 </div>
               </div>
               <div id="previewImages">
-                {/* <img src="http://localhost:5002/images/f6d30125640c6220ba3af9119dd724d2"></img> */}
+                {/* <img src="https://deaksappbe.herokuapp.com/images/f6d30125640c6220ba3af9119dd724d2"></img> */}
               </div>
 
               {/* <div>

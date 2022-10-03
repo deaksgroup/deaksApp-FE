@@ -17,7 +17,7 @@ const UserStack = (props) => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://localhost:5002/users", {
+        const response = await fetch("https://deaksappbe.herokuapp.com/users", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -82,7 +82,7 @@ const deleteUser = async(e)=>{
   // console.log(userId,".......userId");
  const data = {"_id": userId};
  axios
- .post(`http://localhost:5002/deleteUser`, data)
+ .post(`https://deaksappbe.herokuapp.com/deleteUser`, data)
  .then((resp) => {
    console.log("resp", resp);
  })

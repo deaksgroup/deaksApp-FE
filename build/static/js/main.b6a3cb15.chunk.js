@@ -130,7 +130,7 @@
                             return (
                               (e.prev = 0),
                               (e.next = 3),
-                              fetch("http://localhost:5002/users", {
+                              fetch("https://deaksappbe.herokuapp.com/users", {
                                 method: "GET",
                                 headers: {
                                   "Content-Type": "application/json",
@@ -771,7 +771,7 @@
                               (e.prev = 0),
                               (e.next = 3),
                               fetch(
-                                "http://localhost:5002/slotList",
+                                "https://deaksappbe.herokuapp.com/slotList",
                                 {
                                   method: "GET",
                                   headers: {
@@ -823,7 +823,7 @@
                         return (
                           (e.next = 2),
                           fetch(
-                            "http://localhost:5002/slotList/".concat(
+                            "https://deaksappbe.herokuapp.com/slotList/".concat(
                               t.target.value
                             ),
                             {
@@ -1081,14 +1081,14 @@
             localStorage.getItem("JWtToken")
           );
           Object(l.useEffect)(function() {
-            C()("http://localhost:5002/groupList/all").then(function(
+            C()("https://deaksappbe.herokuapp.com/groupList/all").then(function(
               e
             ) {
               h(e.data);
             });
           }, []),
             Object(l.useEffect)(function() {
-              C()("http://localhost:5002/users").then(function(e) {
+              C()("https://deaksappbe.herokuapp.com/users").then(function(e) {
                 S(e.data);
               });
             }, []),
@@ -1106,7 +1106,7 @@
                                 (e.prev = 0),
                                 (e.next = 3),
                                 fetch(
-                                  "http://localhost:5002/hotelList",
+                                  "https://deaksappbe.herokuapp.com/hotelList",
                                   {
                                     method: "GET",
                                     headers: {
@@ -1173,7 +1173,7 @@
                                   (e.prev = 0),
                                   (e.next = 3),
                                   fetch(
-                                    "http://localhost:5002/adminoutletList/".concat(
+                                    "https://deaksappbe.herokuapp.com/adminoutletList/".concat(
                                       fe
                                     ),
                                     {
@@ -1258,7 +1258,7 @@
                       totalpay: oe,
                     };
                     C.a
-                      .post("http://localhost:5002/slotList", n)
+                      .post("https://deaksappbe.herokuapp.com/slotList", n)
                       .then(function(e) {})
                       .then(function() {});
                   },
@@ -1751,7 +1751,7 @@
                             return (
                               (e.prev = 0),
                               (e.next = 3),
-                              fetch("http://localhost:5002/users", {
+                              fetch("https://deaksappbe.herokuapp.com/users", {
                                 method: "GET",
                                 headers: {
                                   "Content-Type": "application/json",
@@ -1807,7 +1807,7 @@
                             }),
                             C.a
                               .post(
-                                "http://localhost:5002/groupList",
+                                "https://deaksappbe.herokuapp.com/groupList",
                                 {
                                   outletId: e.outlet.outlet._id,
                                   title: i,
@@ -2098,7 +2098,7 @@
                             localStorage.getItem("JWTTOken"),
                             (t.next = 8),
                             fetch(
-                              "http://localhost:5002/hotelList",
+                              "https://deaksappbe.herokuapp.com/hotelList",
                               {
                                 method: "POST",
                                 body: l,
@@ -2348,7 +2348,7 @@
               ),
               a = new Image();
             (a.src = String(
-              "http://localhost:5002/images/".concat(
+              "https://deaksappbe.herokuapp.com/images/".concat(
                 e.hotel.hotelEmblem
               )
             )),
@@ -2379,7 +2379,7 @@
                           l.append("state", JSON.stringify(n)),
                           localStorage.getItem("JWTTOken"),
                           (t.next = 8),
-                          fetch("http://localhost:5002/hotelList", {
+                          fetch("https://deaksappbe.herokuapp.com/hotelList", {
                             method: "PATCH",
                             body: l,
                             headers: {
@@ -2622,7 +2622,7 @@
                               (t.prev = 0),
                               (t.next = 3),
                               fetch(
-                                "http://localhost:5002/adminoutletList/".concat(
+                                "https://deaksappbe.herokuapp.com/adminoutletList/".concat(
                                   e.hotel._id
                                 ),
                                 {
@@ -2676,7 +2676,7 @@
                           return (
                             (t.next = 2),
                             fetch(
-                              "http://localhost:5002/hotelList/".concat(
+                              "https://deaksappbe.herokuapp.com/hotelList/".concat(
                                 a.target.value
                               ),
                               {
@@ -2725,7 +2725,7 @@
                           return (
                             (e.next = 2),
                             fetch(
-                              "http://localhost:5002/outletList/".concat(
+                              "https://deaksappbe.herokuapp.com/outletList/".concat(
                                 t.target.value
                               ),
                               {
@@ -2885,7 +2885,7 @@
                                   (e.prev = 0),
                                   (e.next = 3),
                                   fetch(
-                                    "http://localhost:5002/hotelList",
+                                    "https://deaksappbe.herokuapp.com/hotelList",
                                     {
                                       method: "GET",
                                       headers: {
@@ -2979,7 +2979,7 @@
                             return (
                               (e.prev = 0),
                               (e.next = 3),
-                              fetch("http://localhost:5002/users", {
+                              fetch("https://deaksappbe.herokuapp.com/users", {
                                 method: "GET",
                                 headers: {
                                   "Content-Type": "application/json",
@@ -3139,7 +3139,7 @@
                             return (
                               (e.prev = 0),
                               (e.next = 3),
-                              fetch("http://localhost:5002/users", {
+                              fetch("https://deaksappbe.herokuapp.com/users", {
                                 method: "GET",
                                 headers: {
                                   "Content-Type": "application/json",
@@ -3345,7 +3345,7 @@
                             return (
                               (e.prev = 0),
                               (e.next = 3),
-                              fetch("http://localhost:5002/users", {
+                              fetch("https://deaksappbe.herokuapp.com/users", {
                                 method: "GET",
                                 headers: {
                                   "Content-Type": "application/json",
@@ -3413,7 +3413,7 @@
                             }),
                             C.a
                               .patch(
-                                "http://localhost:5002/groupList",
+                                "https://deaksappbe.herokuapp.com/groupList",
                                 {
                                   outletId: e.group.outletId,
                                   groupId: e.group._id,
@@ -3648,7 +3648,7 @@
             var t = function(t) {
               C.a
                 .delete(
-                  "http://localhost:5002/groupList/".concat(
+                  "https://deaksappbe.herokuapp.com/groupList/".concat(
                     t.target.value
                   )
                 )
@@ -4243,7 +4243,7 @@
                               (e.prev = 0),
                               (e.next = 3),
                               fetch(
-                                "http://localhost:5002/hotelList",
+                                "https://deaksappbe.herokuapp.com/hotelList",
                                 {
                                   method: "GET",
                                   headers: {
@@ -4318,7 +4318,7 @@
                           }),
                           r.append("state", JSON.stringify(l)),
                           (t.next = 11),
-                          fetch("http://localhost:5002/outletList", {
+                          fetch("https://deaksappbe.herokuapp.com/outletList", {
                             method: "POST",
                             body: r,
                             headers: {
@@ -4701,7 +4701,7 @@
             i = s[0];
           s[1];
           Object(l.useEffect)(function() {
-            C()("http://localhost:5002/users")
+            C()("https://deaksappbe.herokuapp.com/users")
               .then(function(e) {})
               .then(function() {});
           }, []);
@@ -4720,7 +4720,7 @@
               localStorage.getItem("JWtToken")
             )),
             Object(l.useEffect)(function() {
-              C()("http://localhost:5002/submit")
+              C()("https://deaksappbe.herokuapp.com/submit")
                 .then(function(e) {})
                 .then(function() {});
             }, []),
@@ -5173,7 +5173,7 @@
                         t.preventDefault(),
                           C.a
                             .post(
-                              "http://localhost:5002/userLogin",
+                              "https://deaksappbe.herokuapp.com/userLogin",
                               {
                                 email: c,
                                 password: u,
@@ -5386,7 +5386,7 @@
                     verificationStatus: be,
                   };
                   C.a
-                    .patch("http://localhost:5002/users", {
+                    .patch("https://deaksappbe.herokuapp.com/users", {
                       verifiedUser: a,
                     })
                     .then(function(e) {});
@@ -5987,7 +5987,7 @@
                               (e.prev = 0),
                               (e.next = 3),
                               fetch(
-                                "http://localhost:5002/hotelList",
+                                "https://deaksappbe.herokuapp.com/hotelList",
                                 {
                                   method: "GET",
                                   headers: {
@@ -6048,7 +6048,7 @@
                           switch ((t.prev = t.next)) {
                             case 0:
                               C()(
-                                "http://localhost:5002/groupList/".concat(
+                                "https://deaksappbe.herokuapp.com/groupList/".concat(
                                   e.outlet.outlet._id
                                 )
                               ).then(function(e) {
@@ -6071,7 +6071,7 @@
               var t = document.getElementById("previewImages"),
                 a = new Image();
               (a.src = String(
-                "http://localhost:5002/images/".concat(e)
+                "https://deaksappbe.herokuapp.com/images/".concat(e)
               )),
                 a.classList.add("".concat(me.a.previewImage)),
                 t.appendChild(a);
@@ -6082,7 +6082,7 @@
               var t = document.getElementById("previewGrooming"),
                 a = new Image();
               (a.src = String(
-                "http://localhost:5002/images/".concat(e)
+                "https://deaksappbe.herokuapp.com/images/".concat(e)
               )),
                 a.classList.add("".concat(me.a.previewImage)),
                 t.appendChild(a);
@@ -6093,7 +6093,7 @@
               var t = document.getElementById("previewHowTo"),
                 a = new Image();
               (a.src = String(
-                "http://localhost:5002/images/".concat(e)
+                "https://deaksappbe.herokuapp.com/images/".concat(e)
               )),
                 a.classList.add("".concat(me.a.previewImage)),
                 t.appendChild(a);
@@ -6139,7 +6139,7 @@
                             c.append("state", JSON.stringify(r)),
                             (a.next = 13),
                             fetch(
-                              "http://localhost:5002/adminoutletList",
+                              "https://deaksappbe.herokuapp.com/adminoutletList",
                               {
                                 method: "PATCH",
                                 body: c,
@@ -6174,7 +6174,7 @@
                       switch ((t.prev = t.next)) {
                         case 0:
                           C()(
-                            "http://localhost:5002/groupList/".concat(
+                            "https://deaksappbe.herokuapp.com/groupList/".concat(
                               e.outlet.outlet._id
                             )
                           ).then(function(e) {

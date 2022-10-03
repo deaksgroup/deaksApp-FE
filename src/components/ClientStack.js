@@ -12,7 +12,7 @@ const ClientStack = (props) => {
     const getData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5002/hotelList",
+          "https://deaksappbe.herokuapp.com/hotelList",
           {
             method: "GET",
             headers: {

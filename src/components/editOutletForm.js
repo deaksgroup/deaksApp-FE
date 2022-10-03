@@ -58,7 +58,7 @@ const EditOutletForm = (props) => {
   // useEffect(() => {
   //   const getData = async () => {
   //     try {
-  //       const response = await fetch("http://localhost:5002/hotelList", {
+  //       const response = await fetch("https://deaksappbe.herokuapp.com/hotelList", {
   //         method: "GET",
   //         headers: {
   //           "Content-Type": "application/json",
@@ -92,7 +92,7 @@ const EditOutletForm = (props) => {
     useEffect(() => {
       const fetch = async () => {
         axios(
-          `http://localhost:5002/groupList/${props.outlet.outlet._id}`
+          `https://deaksappbe.herokuapp.com/groupList/${props.outlet.outlet._id}`
         ).then((resp) => {
           setGroups(resp.data);
 
@@ -144,7 +144,7 @@ const EditOutletForm = (props) => {
     props.outlet.outlet.outletImages.map((imageId) => {
       const preview = document.getElementById("previewImages");
       var image = new Image();
-      image.src = String(`http://localhost:5002/images/${imageId}`);
+      image.src = String(`https://deaksappbe.herokuapp.com/images/${imageId}`);
       //console.log(image.src, "....imgSrc");
       image.classList.add(`${styles.previewImage}`);
       preview.appendChild(image);
@@ -176,7 +176,7 @@ const EditOutletForm = (props) => {
     props.outlet.outlet.groomingImages.map((imageId) => {
       const preview = document.getElementById("previewGrooming");
       var image = new Image();
-      image.src = String(`http://localhost:5002/images/${imageId}`);
+      image.src = String(`https://deaksappbe.herokuapp.com/images/${imageId}`);
       //console.log(image.src, "....imgSrc");
       image.classList.add(`${styles.previewImage}`);
       preview.appendChild(image);
@@ -207,7 +207,7 @@ const EditOutletForm = (props) => {
     props.outlet.outlet.howToImages.map((imageId) => {
       const preview = document.getElementById("previewHowTo");
       var image = new Image();
-      image.src = String(`http://localhost:5002/images/${imageId}`);
+      image.src = String(`https://deaksappbe.herokuapp.com/images/${imageId}`);
       //console.log(image.src, "....imgSrc");
       image.classList.add(`${styles.previewImage}`);
       preview.appendChild(image);
@@ -247,7 +247,7 @@ const EditOutletForm = (props) => {
     formData.append("state", JSON.stringify(outlet));
 
     const response = await fetch(
-      "http://localhost:5002/adminoutletList",
+      "https://deaksappbe.herokuapp.com/adminoutletList",
       {
         method: "PATCH",
         body: formData,
@@ -265,7 +265,7 @@ const EditOutletForm = (props) => {
   };
   const fetchGroups = async () => {
     axios(
-      `http://localhost:5002/groupList/${props.outlet.outlet._id}`
+      `https://deaksappbe.herokuapp.com/groupList/${props.outlet.outlet._id}`
     ).then((resp) => {
       setGroups(resp.data);
 
@@ -485,7 +485,7 @@ const EditOutletForm = (props) => {
                 </div>
               </div>
               <div id="previewImages">
-                {/* <img src="http://localhost:5002/images/f6d30125640c6220ba3af9119dd724d2"></img> */}
+                {/* <img src="https://deaksappbe.herokuapp.com/images/f6d30125640c6220ba3af9119dd724d2"></img> */}
               </div>
 
               {/* <div>
