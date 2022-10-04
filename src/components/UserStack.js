@@ -104,7 +104,7 @@ const deleteUser = async(e)=>{
             </th>
             <th scope="col">Account Status</th>
             <th scope="col">NRIC</th>
-            
+            <th scope="col">Contact Number</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -118,8 +118,8 @@ const deleteUser = async(e)=>{
                 <td style={{color:user.accountStatus == "Authorized" ?"green" : user.verificationStatus ==
 "Pending" ? "blue" : "red"
  }}>{user.verificationStatus == "Pending" ? `${user.accountStatus} - (${user.verificationStatus})` : user.accountStatus }</td>
-                <td>{user.NRIC}</td>
-                
+                <td>{(user.NRIC == null ||user.NRIC == "") ? "-" :user.NRIC }</td>
+                <td style={{color:user.numberIsVerified ? "green" : "red"}} >{user.contactNumber}</td>
                 <td>
                   <button
                     className="btn btn-sm btn-danger mr-1"
